@@ -54,6 +54,21 @@
         .service-card li { margin-bottom: 10px; padding-left: 15px; position: relative; }
         .service-card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
 
+        /* New styling for smaller, clickable links */
+        .contact-link {
+            font-size: 1.1rem !important; 
+            color: var(--gold);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-family: 'IBM Plex Mono', monospace;
+            transition: 0.3s;
+        }
+        .contact-link:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+        
         /* THE VAULT & CONTACT */
         .dark-bg { background: var(--obsidian); color: #fff; }
         .contact-box { background: rgba(255,255,255,0.03); padding: 50px; border: 1px solid rgba(212,175,55,0.2); margin-top: 40px; }
@@ -168,12 +183,20 @@
             <p style="max-width: 600px; margin: 0 auto 40px auto; opacity: 0.8;">If you feel the friction in your life or business, don't wait. Reach out. I am here as a friend and a guide.</p>
             
 <div class="contact-box">
-                <p class="mono gold-text" style="margin-bottom: 20px;">[ INITIALIZE CONTACT ]</p>
-                <p style="font-size: 1.5rem; margin-bottom: 10px;">email@khemrajpradhan.com.np</p>
-                <p style="font-size: 1.5rem; margin-bottom: 30px;">WhatsApp: +977 9840852582</p>
-                
-                <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta" style="display:inline-block; font-size: 1.2rem;">FILL THE SINCERITY FORM</a>
-
+    <p class="mono gold-text" style="margin-bottom: 25px;">[ INITIALIZE CONTACT ]</p>
+    
+    <a href="mailto:email@khemrajpradhan.com.np" class="contact-link">
+        email@khemrajpradhan.com.np
+    </a>
+    
+    <a href="https://wa.me/9779840852582" target="_blank" class="contact-link">
+        WhatsApp: +977 9840852582
+    </a>
+    
+    <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta" style="display:inline-block; margin-top: 20px;">
+        FILL THE SINCERITY FORM
+    </a>
+</div>
             <div style="margin-top: 60px; opacity: 0.5; font-size: 0.8rem;" class="mono">
                 <p>DAMAK, NEPAL | ALL RIGHTS RESERVED © 2026</p>
             </div>
