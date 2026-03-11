@@ -3,32 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khem Raj Pradhan | Systems Researcher</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-    
+    <title>Khem Raj Pradhan | Systems Researcher & Life Companion</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --gold: #d4af37; --red: #ff4d4d; --obsidian: #0a0a0a; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--white); color: #111; line-height: 1.8; overflow-x: hidden; }
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+        .gold-text { color: var(--gold); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        .section-padding { padding: 120px 0; position: relative; z-index: 2; }
+        .text-center { text-align: center; }
+        
+        /* TICKER */
+        .ticker-wrap { background: #000; color: #fff; padding: 12px 0; position: fixed; top: 0; width: 100%; z-index: 1001; font-size: 0.75rem; border-bottom: 1px solid var(--gold); }
+        .ticker { white-space: nowrap; display: inline-block; animation: ticker 30s linear infinite; }
+        @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+
+        /* HEADER */
+        header { position: fixed; top: 45px; width: 100%; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-row { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Space Grotesk'; font-weight: 700; text-decoration: none; color: #000; font-size: 1.2rem; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .btn-cta { background: var(--gold); color: #fff !important; padding: 10px 22px; border-radius: 4px; font-weight: 700; }
+
+        /* HERO */
+        .hero-section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .h-lg { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
+
+        /* ABOUT */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 80px; align-items: flex-start; }
+        .profile-img { width: 100%; filter: grayscale(1); border: 1px solid rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .bio-text p { margin-bottom: 20px; font-size: 1.05rem; color: #333; }
+        .headline-sm { font-family: 'Space Grotesk'; font-size: 1.8rem; margin-bottom: 15px; color: var(--obsidian); }
+
+        /* SERVICES & HOW I HELP */
+        .light-bg { background: #fcfcfc; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .services-intro { max-width: 800px; margin: 0 auto 60px auto; text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 45px; border: 1px solid #eee; transition: 0.4s; }
+        .service-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .service-card h3 { font-family: 'Space Grotesk'; margin-bottom: 20px; font-size: 1.3rem; color: var(--gold); }
+        .service-card ul { list-style: none; font-family: 'IBM Plex Mono'; font-size: 0.85rem; }
+        .service-card li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+        .service-card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+
+        /* THE VAULT & CONTACT */
+        .dark-bg { background: var(--obsidian); color: #fff; }
+        .contact-box { background: rgba(255,255,255,0.03); padding: 50px; border: 1px solid rgba(212,175,55,0.2); margin-top: 40px; }
+        .social-row { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+        .social-link { color: var(--gold); text-decoration: none; font-family: 'IBM Plex Mono'; font-size: 0.9rem; }
+        
+        #digital-vastu-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.1; }
+        @media (max-width: 768px) { .nav-links { display: none; } .grid-2 { gap: 40px; } }
+    </style>
 </head>
-<body class="spa-system">
+<body>
 
     <div class="ticker-wrap">
-        <div class="ticker">
-            <span class="ticker-item"><span class="mono gold-text">SYSTEM STATUS:</span> BIAS-FREE OBSERVATION ACTIVE | <span class="red-text">NOW ACCEPTING 2 NEW CLIENTS FOR MARCH</span></span>
+        <div class="ticker mono">
+            [ SYSTEM STATUS: ACTIVE ] • ACCEPTING 2 NEW CLIENTS FOR MARCH • ROOT COORDINATE: DAMAK, NEPAL • EVOLUTION OVER DEGRADATION
         </div>
     </div>
 
-    <header class="glass-header">
+    <header>
         <div class="container nav-row">
-            <a href="#hero" class="nav-logo">:: KHEM RAJ PRADHAN ::</a>
-            <nav class="desktop-nav">
+            <a href="#" class="nav-logo">:: KHEM RAJ PRADHAN ::</a>
+            <nav>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">The Journey</a></li>
                     <li><a href="#services">Architecture</a></li>
-                    <li><a href="#vault">The Vault</a></li>
-                    <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta">BOOK</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta">BOOK A CALL</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,107 +88,125 @@
 
     <canvas id="digital-vastu-canvas"></canvas>
 
-    <section id="hero" class="hero-section">
-        <div class="container text-center">
-            <h1 class="h-lg">Architecting<br><span class="gold-text">Regenerative</span> Alternatives</h1>
-            <p class="mono label">:: SYSTEMIC RESEARCH IN HUMANITY, NATURE & TECHNOLOGY ::</p>
-            <div class="scroll-indicator">
-                <span class="mono p-xs">[ SCROLL TO INITIALIZE ]</span>
-                <div class="arrow-down"></div>
-            </div>
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="h-lg">Architecting<br><span class="gold-text">Regenerative</span><br>Alternatives</h1>
+            <p class="mono gold-text">[ WELCOME TO THE RESEARCH PROJECT OF LIFE ]</p>
         </div>
     </section>
 
     <section id="about" class="section-padding">
         <div class="container grid-2">
-            <div class="about-visual">
+            <div>
                 <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan" class="profile-img">
-                <div class="observer-stats mono p-xs">
-                    <p>LOC: 26.66° N, 87.68° E</p>
-                    <p>METH: BIAS-FREE OBSERVATION</p>
+                <div class="mono" style="font-size: 0.7rem; opacity: 0.5;">
+                    <p>LOCATION: 26.66° N, 87.68° E</p>
+                    <p>FIELD: SYSTEMIC HUMAN EVOLUTION</p>
                 </div>
             </div>
-            <div class="about-content">
-                <h2 class="h-md">Navigating the Middle Path</h2>
-                <p class="p-lg gold-text">A Companion for the Human Journey.</p>
-                <p>I am Khem Raj Pradhan. I don’t offer a "program." I offer my experiences and my hand as a companion to those ready to unlearn the noise of failing social systems. Coming from a small village in the hills of Nepal, my life is a research project into balance.</p>
-                <p>Goal: <strong>Evolution over Degradation.</strong></p>
+            <div class="bio-text">
+                <h2 class="headline-sm">Navigating the Middle Path: A Companion for the Human Journey.</h2>
+                <p>The present world is loud, and most of the systems we live in are designed for profit, not for people. I am <strong>Khem Raj Pradhan</strong>. I don’t offer a "program" or a "product." I offer my experiences, insights, skills and hand as a companion to those who are ready to unlearn the noise of the failing social system, a rat race and discover self, alternative, regenerative natural lifestyle, path.</p>
+                
+                <p>Coming from a small village in the hills of Nepal, my life has been full of ups and downs. My life is a research project itself into what it means to be alone, lost, broke, and again find balance as a versatile, dynamic human. Rather than chasing money in times of struggle, I chose to understand life, find knowledge, and wisdom traveling to many places after quitting school. Now, I want to share my findings to help you understand life too.</p>
+                
+                <p>Whether we are discussing the structure of your life or the strength of your body, my goal is the same: <strong>Evolution over Degradation</strong>. I want to help you identify the problems in your life together with you as your friend, understand them well, find the root cause, and find solutions to fix them. You don't have to navigate the transition alone.</p>
             </div>
         </div>
     </section>
 
     <section id="services" class="section-padding light-bg">
         <div class="container">
-            <h2 class="mono label text-center">/ SYSTEMIC_DIMENSIONS</h2>
+            <div class="services-intro">
+                <h2 class="headline-sm">How I Help</h2>
+                <p>I care for humanity, nature, and technology. Everything I provide is based on natural law and regenerative methods to bring back balance and harmony to your existence.</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-cat glass">
-                    <h3 class="mono gold-text">01. INTERNAL</h3>
+                <div class="service-card">
+                    <h3>The Personal Path</h3>
                     <ul>
-                        <li>Philosophy & Purpose Audit</li>
-                        <li>Subconscious Reprogramming</li>
-                        <li>Trauma & Shadow Work</li>
-                        <li>Meditation & Yoga</li>
+                        <li>Talk about anything: philosophy, traumas, visions, or darkness.</li>
+                        <li>Fixing habits, routines, and time management.</li>
+                        <li>Ayurvedic eating habits and diet guidance.</li>
+                        <li>Understanding Astrological patterns and Vastu Shastra.</li>
+                        <li>Yoga, meditation, and physical sports companionship (MMA, Wrestling).</li>
                     </ul>
                 </div>
-                <div class="service-cat glass">
-                    <h3 class="mono gold-text">02. BIOLOGICAL</h3>
+
+                <div class="service-card">
+                    <h3>Spatial & Creative</h3>
                     <ul>
-                        <li>MMA, Wrestling & Jujutsu</li>
-                        <li>Ayurvedic Diet & Nutrition</li>
-                        <li>Seasons & Moon Cycles</li>
-                        <li>Body-Type Performance</li>
+                        <li>Designing Permaculture farms and urban mini-gardens.</li>
+                        <li>Eco-architecture and Designing homes with eco-principles.</li>
+                        <li>DIY projects: fixing plumbing, carpentry, and painting.</li>
+                        <li>Outdoor guidance: hiking, trekking, camping, and fishing.</li>
                     </ul>
                 </div>
-                <div class="service-cat glass">
-                    <h3 class="mono gold-text">03. SPATIAL</h3>
+
+                <div class="service-card">
+                    <h3>Business Architecture</h3>
                     <ul>
-                        <li>Vastu Shastra Consultation</li>
-                        <li>Permaculture Design</li>
-                        <li>Eco-Architecture</li>
-                        <li>DIY Home Systems</li>
+                        <li>Designing and running ethical regenerative businesses.</li>
+                        <li>Market research, branding, and marketing strategy.</li>
+                        <li>Social media management and video/film editing lessons.</li>
+                        <li>Business "Spying": Identifying losses, leaks, and friction in your team.</li>
                     </ul>
                 </div>
-                <div class="service-cat glass">
-                    <h3 class="mono gold-text">04. EXTERNAL</h3>
-                    <ul>
-                        <li>Ethical Business Strategy</li>
-                        <li>Branding & Web Design</li>
-                        <li>Social Media Management</li>
-                        <li>Team Friction Audits</li>
-                    </ul>
-                </div>
+            </div>
+
+            <div class="contact-box text-center" style="background:#fff; border: 1px solid #eee; margin-top: 60px;">
+                <h3 class="headline-sm">For Families & Teams</h3>
+                <p>If your whole family is ready, I can work with all members to solve problems, build unity, and distribute responsibilities. For businesses, I act as an observer to erase friction and filter unnecessary noise from your operations.</p>
             </div>
         </div>
     </section>
 
-    <section id="vault" class="vault-section section-padding dark-bg">
-        <div class="container">
-            <h2 class="h-md gold-text mono">/ THE_VAULT_PROTOCOL</h2>
-            <div class="grid-3">
-                <div class="policy-item glass">
-                    <h4 class="mono">VAULT_PRIVACY</h4>
-                    <p class="p-xs">Shadow data remains encrypted and private. Never shared.</p>
-                </div>
-                <div class="policy-item glass">
-                    <h4 class="mono">SINCERITY_GATE</h4>
-                    <p class="p-xs">1,000 NPR / $25 commitment fee for diagnostic research.</p>
-                </div>
-                <div class="policy-item glass">
-                    <h4 class="mono">TERMINATION</h4>
-                    <p class="p-xs">Immediate service termination if core corrections are ignored.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="section-padding">
+    <section id="contact" class="section-padding dark-bg">
         <div class="container text-center">
-            <h2 class="h-lg">READY TO RE-ARCHITECT?</h2>
-            <p class="mono label">email@khemrajpradhan.com.np | +977 9840852582</p>
-            <p class="mono p-xs" style="opacity: 0.3; margin-top: 60px;">© 2026 ROOT_COORDINATE: DAMAK, NEPAL</p>
-        </div>
-    </footer>
+            <h2 class="h-lg gold-text">Let's Talk.</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px auto; opacity: 0.8;">If you feel the friction in your life or business, don't wait. Reach out. I am here as a friend and a guide.</p>
+            
+            <div class="contact-box">
+                <p class="mono gold-text" style="margin-bottom: 20px;">[ INITIALIZE CONTACT ]</p>
+                <p style="font-size: 1.5rem; margin-bottom: 10px;">email@khemrajpradhan.com.np</p>
+                <p style="font-size: 1.5rem; margin-bottom: 30px;">WhatsApp: +977 9840852582</p>
+                
+                <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta" style="display:inline-block; font-size: 1.2rem;">FILL THE SINCERITY FORM</a>
+                
+                <div class="social-row">
+                    <a href="#" class="social-link">YouTube</a>
+                    <a href="#" class="social-link">TikTok</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
 
-    <script src="js/script.js"></script>
+            <div style="margin-top: 60px; opacity: 0.5; font-size: 0.8rem;" class="mono">
+                <p>SINCERITY GATE: 1,000 NPR / $25 DEPOSIT REQUIRED FOR RESEARCH CALLS.</p>
+                <p>DAMAK, NEPAL | ALL RIGHTS RESERVED © 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const canvas = document.getElementById('digital-vastu-canvas');
+        const ctx = canvas.getContext('2d');
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function drawGrid() {
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 0.1;
+            for (let x = 0; x < canvas.width; x += 80) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += 80) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+            }
+        }
+        drawGrid();
+    </script>
 </body>
 </html>
