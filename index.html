@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khem Raj Pradhan | Systems Researcher & Life Architect</title>
-    <meta name="description" content="Independent Systems Research governed by Natural Law. Architecting regenerative alternatives for humanity.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body class="spa-system">
 
@@ -23,12 +20,16 @@
     <header class="glass-header">
         <div class="container nav-row">
             <a href="#hero" class="nav-logo">:: KHEM RAJ PRADHAN ::</a>
-            <nav class="desktop-nav">
+            <button class="burger-menu" id="menu-trigger">
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <nav class="desktop-nav" id="main-nav">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Architecture</a></li>
                     <li><a href="#vault">The Vault</a></li>
-                    <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta">BOOK APPOINTMENT</a></li>
+                    <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta">BOOK</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +42,7 @@
             <h1 class="h-lg">Architecting<br><span class="gold-text">Regenerative</span> Alternatives</h1>
             <p class="mono label">:: SYSTEMIC RESEARCH IN HUMANITY, NATURE & TECHNOLOGY ::</p>
             <div class="scroll-indicator">
-                <span class="mono p-xs">[ INITIALIZE SYSTEM ]</span>
+                <span class="mono p-xs">[ SCROLL TO INITIALIZE ]</span>
                 <div class="arrow-down"></div>
             </div>
         </div>
@@ -52,109 +53,91 @@
             <div class="about-visual">
                 <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan" class="profile-img">
                 <div class="observer-stats mono p-xs">
-                    <p>LOC: 26.66° N, 87.68° E (DAMAK, NEPAL)</p>
-                    <p>STATUS: INDEPENDENT OBSERVER</p>
+                    <p>LOC: 26.66° N, 87.68° E</p>
+                    <p>METH: BIAS-FREE OBSERVATION</p>
                 </div>
             </div>
             <div class="about-content">
                 <h2 class="h-md">Navigating the Middle Path</h2>
                 <p class="p-lg gold-text">A Companion for the Human Journey.</p>
-                <p>The world is loud, designed for profit, not people. I am Khem Raj Pradhan. I don’t offer a "program." I offer my experiences and my hand as a companion to those ready to unlearn the noise of failing social systems and a rat race.</p>
-                <p>Coming from a small village in the hills of Nepal, my life is a research project into what it means to be alone, lost, and broke—and find balance again. I chose to travel and understand life rather than chase money. Now, I audit systems to ensure <strong>Evolution over Degradation.</strong></p>
+                <p>I am Khem Raj Pradhan. I don’t offer a "program." I offer my experiences and my hand as a companion to those ready to unlearn the noise of failing social systems. Coming from a small village in the hills of Nepal, my life is a research project into balance.</p>
+                <p>Whether we are discussing the structure of your life or the strength of your body, my goal is: <strong>Evolution over Degradation.</strong></p>
             </div>
         </div>
     </section>
 
     <section id="services" class="section-padding light-bg">
         <div class="container">
-            <div class="section-head text-center">
-                <h2 class="mono label">/ SYSTEMIC_DIMENSIONS</h2>
-                <p class="p-md">Categorized capabilities for individual and collective evolution.</p>
-            </div>
-
+            <h2 class="mono label text-center">/ SYSTEMIC_DIMENSIONS</h2>
             <div class="services-grid">
                 <div class="service-cat glass">
                     <h3 class="mono gold-text">01. INTERNAL</h3>
-                    <p class="p-xs">Psychological & Spiritual alignment.</p>
                     <ul>
-                        <li>Trauma & Shadow Work</li>
-                        <li>Subconscious Reprogramming</li>
                         <li>Philosophy & Purpose Audit</li>
-                        <li>Meditation & Healing</li>
+                        <li>Subconscious Reprogramming</li>
+                        <li>Trauma & Shadow Work</li>
+                        <li>Meditation & Yoga Instruction</li>
                     </ul>
                 </div>
                 <div class="service-cat glass">
                     <h3 class="mono gold-text">02. BIOLOGICAL</h3>
-                    <p class="p-xs">Physical resilience & Natural law.</p>
                     <ul>
-                        <li>MMA / Jujutsu / Wrestling</li>
-                        <li>Ayurvedic Nutrition</li>
-                        <li>Yoga & Breathwork</li>
-                        <li>Circadian & Moon Cycles</li>
+                        <li>MMA, Wrestling & Jujutsu</li>
+                        <li>Ayurvedic Diet & Nutrition</li>
+                        <li>Seasons & Moon Cycles</li>
+                        <li>Body-Type Performance Plans</li>
                     </ul>
                 </div>
                 <div class="service-cat glass">
                     <h3 class="mono gold-text">03. SPATIAL</h3>
-                    <p class="p-xs">Environmental architecture.</p>
                     <ul>
                         <li>Vastu Shastra Consultation</li>
                         <li>Permaculture & Urban Farming</li>
-                        <li>Eco-Home Redesign</li>
-                        <li>DIY System Maintenance</li>
+                        <li>Eco-Architecture Design</li>
+                        <li>DIY & System Maintenance</li>
                     </ul>
                 </div>
                 <div class="service-cat glass">
                     <h3 class="mono gold-text">04. EXTERNAL</h3>
-                    <p class="p-xs">Business & Digital systems.</p>
                     <ul>
-                        <li>Regenerative Business Design</li>
-                        <li>Ethical Branding & Marketing</li>
+                        <li>Ethical Business Strategy</li>
+                        <li>Branding & Web Architecture</li>
                         <li>Social Media Management</li>
                         <li>Team Friction Auditing</li>
                     </ul>
                 </div>
             </div>
-
-            <div class="service-footer text-center">
-                <p class="mono p-sm">AVAILABLE FOR INDIVIDUALS, FAMILIES, AND BUSINESSES.</p>
+            <div class="text-center">
                 <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" class="btn-gold">INITIALIZE RESEARCH CALL</a>
             </div>
         </div>
     </section>
 
-    <section id="vault" class="vault-section section-padding">
+    <section id="vault" class="vault-section section-padding dark-bg">
         <div class="container">
-            <div class="section-head">
-                <h2 class="h-md gold-text mono">/ THE_VAULT_PROTOCOL</h2>
-                <p class="mono label">OPERATING UNDER NATURAL LAW</p>
-            </div>
+            <h2 class="h-md gold-text mono">/ THE_VAULT_PROTOCOL</h2>
             <div class="grid-3">
                 <div class="policy-item glass">
                     <h4 class="mono">VAULT_PRIVACY</h4>
-                    <p class="p-xs">Sensitive "Shadow Data" (secrets, vulnerabilities, birth data) is encrypted in a private vault. Never shared. Never sold.</p>
+                    <p class="p-xs">Shadow data remains encrypted and private. Never shared.</p>
                 </div>
                 <div class="policy-item glass">
                     <h4 class="mono">SINCERITY_GATE</h4>
-                    <p class="p-xs">1,000 NPR / $25 non-refundable deposit ensures commitment to the truth before diagnostic research begins.</p>
+                    <p class="p-xs">1,000 NPR / $25 commitment fee for diagnostic research.</p>
                 </div>
                 <div class="policy-item glass">
                     <h4 class="mono">TERMINATION</h4>
-                    <p class="p-xs">Failure to implement the three core corrections identified results in immediate termination of the engagement.</p>
+                    <p class="p-xs">Immediate service termination if core corrections are ignored.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="terminal-footer section-padding">
+    <footer id="contact" class="section-padding">
         <div class="container text-center">
             <h2 class="h-lg">READY TO RE-ARCHITECT?</h2>
-            <div class="contact-details mono">
-                <p>email@khemrajpradhan.com.np</p>
-                <p>+977 9840852582</p>
-            </div>
-            <div class="social-links">
-                </div>
-            <p class="mono p-xs" style="opacity: 0.3; margin-top: 60px;">© 2026 ROOT_COORDINATE: DAMAK, NEPAL | ALL RIGHTS RESERVED.</p>
+            <p class="mono label">email@khemrajpradhan.com.np | +977 9840852582</p>
+            <p class="mono p-xs" style="opacity: 0.3; margin-top: 60px;">© 2026 ROOT_COORDINATE: DAMAK, NEPAL</p>
         </div>
     </footer>
 
