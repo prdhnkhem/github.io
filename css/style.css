@@ -46,3 +46,29 @@ body { background: #fff; color: #111; transition: background 0.8s ease; overflow
     .about-visual { order: 2; }
     .about-content { order: 1; }
 }
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .desktop-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--obsidian);
+        transition: 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+    .desktop-nav.active { right: 0; }
+    .nav-links { flex-direction: column; gap: 30px; text-align: center; }
+}
+
+.spa-system { scroll-behavior: smooth; }
+.section-padding { padding: 80px 20px; }
+.dark-bg { background: #0a0a0a; color: white; }
+.light-bg { background: #f4f4f4; color: #111; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.profile-img { width: 100%; max-width: 400px; filter: grayscale(1); border-radius: 2px; }
