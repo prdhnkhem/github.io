@@ -1,0 +1,22 @@
+{
+  "name": "Khem Raj Pradhan",
+  "short_name": "Khem Raj",
+  "description": "Life Companion & Systems Researcher based in Damak, Nepal.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9f6ef",
+  "theme_color": "#080807",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
