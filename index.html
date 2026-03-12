@@ -1,226 +1,1160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khem Raj Pradhan | Systems Researcher & Life Companion</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- ═══════════════════════════════════════════════
+       META — SEO, Open Graph, Twitter, Structured Data
+  ═══════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <style>
-        :root { --gold: #d4af37; --red: #ff4d4d; --obsidian: #0a0a0a; --white: #ffffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--white); color: #111; line-height: 1.8; overflow-x: hidden; }
-        .mono { font-family: 'IBM Plex Mono', monospace; }
-        .gold-text { color: var(--gold); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-        .section-padding { padding: 120px 0; position: relative; z-index: 2; }
-        .text-center { text-align: center; }
-        
-        /* TICKER */
-        .ticker-wrap { background: #000; color: #fff; padding: 12px 0; position: fixed; top: 0; width: 100%; z-index: 1001; font-size: 0.75rem; border-bottom: 1px solid var(--gold); }
-        .ticker { white-space: nowrap; display: inline-block; animation: ticker 30s linear infinite; }
-        @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+  <title>Khem Raj Pradhan | Life Companion & Systems Researcher — Damak, Nepal</title>
+  <meta name="description" content="Khem Raj Pradhan is an independent life companion, systems researcher, and regenerative living guide based in Damak, Nepal. Helping individuals, families, and teams evolve beyond the failing social system.">
+  <meta name="keywords" content="Khem Raj Pradhan, life companion, systems researcher, Nepal, regenerative living, permaculture, ayurveda, vastu shastra, Hunate Movement, life guide, Damak Nepal">
+  <meta name="author" content="Khem Raj Pradhan">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://khemrajpradhan.com.np/">
 
-        /* HEADER */
-        header { position: fixed; top: 45px; width: 100%; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .nav-row { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: 'Space Grotesk'; font-weight: 700; text-decoration: none; color: #000; font-size: 1.2rem; }
-        .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: #444; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
-        .btn-cta { background: var(--gold); color: #fff !important; padding: 10px 22px; border-radius: 4px; font-weight: 700; }
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://khemrajpradhan.com.np/">
+  <meta property="og:title" content="Khem Raj Pradhan | Life Companion & Systems Researcher">
+  <meta property="og:description" content="Helping individuals and families unlearn the noise of the failing social system and discover a regenerative, natural path. Based in Damak, Nepal.">
+  <meta property="og:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Khem Raj Pradhan">
 
-        /* HERO */
-        .hero-section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .h-lg { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Khem Raj Pradhan | Life Companion & Systems Researcher">
+  <meta name="twitter:description" content="Helping individuals and families unlearn the noise of the failing social system and discover a regenerative, natural path.">
+  <meta name="twitter:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
 
-        /* ABOUT */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 80px; align-items: flex-start; }
-        .profile-img { width: 100%; filter: grayscale(1); border: 1px solid rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .bio-text p { margin-bottom: 20px; font-size: 1.05rem; color: #333; }
-        .headline-sm { font-family: 'Space Grotesk'; font-size: 1.8rem; margin-bottom: 15px; color: var(--obsidian); }
+  <!-- PWA / App -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Khem Raj Pradhan">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="manifest" href="manifest.json">
 
-        /* SERVICES & HOW I HELP */
-        .light-bg { background: #fcfcfc; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .services-intro { max-width: 800px; margin: 0 auto 60px auto; text-align: center; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: #fff; padding: 45px; border: 1px solid #eee; transition: 0.4s; }
-        .service-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .service-card h3 { font-family: 'Space Grotesk'; margin-bottom: 20px; font-size: 1.3rem; color: var(--gold); }
-        .service-card ul { list-style: none; font-family: 'IBM Plex Mono'; font-size: 0.85rem; }
-        .service-card li { margin-bottom: 10px; padding-left: 15px; position: relative; }
-        .service-card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+  <!-- Structured Data (Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khem Raj Pradhan",
+    "url": "https://khemrajpradhan.com.np",
+    "image": "https://khemrajpradhan.com.np/assets/img/khem_raj_pradhan.webp",
+    "jobTitle": "Life Companion & Systems Researcher",
+    "description": "Independent life companion, systems researcher, and regenerative living guide based in Damak, Nepal.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Damak",
+      "addressCountry": "NP"
+    },
+    "email": "email@khemrajpradhan.com.np",
+    "telephone": "+977-9840852582",
+    "sameAs": [
+      "https://youtube.com/@khemrajpradhan",
+      "https://facebook.com/khemrajpradhan",
+      "https://instagram.com/khemrajpradhan",
+      "https://linkedin.com/in/khemrajpradhan",
+      "https://tiktok.com/@khemrajpradhan"
+    ]
+  }
+  </script>
 
-        /* New styling for smaller, clickable links */
-        .contact-link {
-            font-size: 1.1rem !important; 
-            color: var(--gold);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
-            font-family: 'IBM Plex Mono', monospace;
-            transition: 0.3s;
-        }
-        .contact-link:hover {
-            opacity: 0.7;
-            text-decoration: underline;
-        }
-        
-        /* THE VAULT & CONTACT */
-        .dark-bg { background: var(--obsidian); color: #fff; }
-        .contact-box { background: rgba(255,255,255,0.03); padding: 50px; border: 1px solid rgba(212,175,55,0.2); margin-top: 40px; }
-        .social-row { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-        .social-link { color: var(--gold); text-decoration: none; font-family: 'IBM Plex Mono'; font-size: 0.9rem; }
-        
-        #digital-vastu-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.1; }
-        @media (max-width: 768px) { .nav-links { display: none; } .grid-2 { gap: 40px; } }
-    </style>
+  <!-- Fonts: Cormorant Garamond (display) + Outfit (body) + JetBrains Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════
+       DESIGN TOKENS — Golden Ratio System
+       Base: 1rem = 16px
+       Scale factor φ = 1.618
+       4px → 6px → 10px → 16px → 26px → 42px → 68px → 110px
+    ══════════════════════════════════════════ */
+    :root {
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-dim:    rgba(201,168,76,0.15);
+      --obsidian:    #080807;
+      --obsidian-2:  #111110;
+      --obsidian-3:  #1a1a18;
+      --cream:       #f9f6ef;
+      --cream-2:     #f2ede2;
+      --ink:         #1c1c1a;
+      --ink-soft:    #4a4a44;
+      --ink-muted:   #7a7a70;
+      --white:       #ffffff;
+      --red:         #c0392b;
+      --green:       #27ae60;
+
+      /* Golden ratio spacing */
+      --sp-xs:   4px;
+      --sp-sm:   6px;
+      --sp-md:   10px;
+      --sp-lg:   16px;
+      --sp-xl:   26px;
+      --sp-2xl:  42px;
+      --sp-3xl:  68px;
+      --sp-4xl:  110px;
+      --sp-5xl:  178px;
+
+      /* Golden ratio type scale */
+      --text-xs:   0.618rem;
+      --text-sm:   0.764rem;
+      --text-base: 1rem;
+      --text-md:   1.272rem;
+      --text-lg:   1.618rem;
+      --text-xl:   2.058rem;
+      --text-2xl:  3.236rem;
+      --text-3xl:  5.236rem;
+
+      --ticker-h: 38px;
+      --header-h: 70px;
+      --offset:   108px;
+
+      --ease-gold: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* ══════════════════════════════════════════ RESET */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    img { display:block; max-width:100%; }
+    a { color: inherit; }
+    ul { list-style: none; }
+
+    /* ══════════════════════════════════════════ CUSTOM CURSOR */
+    .cursor-dot {
+      position: fixed; top:0; left:0; width:8px; height:8px;
+      background: var(--gold); border-radius:50%;
+      pointer-events:none; z-index:9999;
+      transform: translate(-50%,-50%);
+      transition: transform 0.1s var(--ease-gold);
+    }
+    .cursor-ring {
+      position: fixed; top:0; left:0; width:36px; height:36px;
+      border: 1px solid var(--gold); border-radius:50%;
+      pointer-events:none; z-index:9998;
+      transform: translate(-50%,-50%);
+      transition: transform 0.18s var(--ease-gold), width 0.3s, height 0.3s, opacity 0.3s;
+      opacity: 0.5;
+    }
+    .cursor-ring.hovered { width:56px; height:56px; opacity:0.8; }
+
+    /* ══════════════════════════════════════════ SCROLL REVEAL */
+    .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.8s var(--ease-gold), transform 0.8s var(--ease-gold); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-28px); transition: opacity 0.8s var(--ease-gold), transform 0.8s var(--ease-gold); }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(28px); transition: opacity 0.8s var(--ease-gold), transform 0.8s var(--ease-gold); }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+    /* STAGGER DELAYS */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+
+    /* ══════════════════════════════════════════ LAYOUT */
+    .container { max-width: 1100px; margin:0 auto; padding:0 var(--sp-2xl); }
+    .container--narrow { max-width: 720px; margin:0 auto; padding:0 var(--sp-2xl); }
+    .section-pad { padding: var(--sp-5xl) 0; }
+
+    /* ══════════════════════════════════════════ TYPOGRAPHY */
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .font-mono    { font-family: 'JetBrains Mono', monospace; }
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .headline-xl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 9vw, 6rem);
+      font-weight: 600;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+    }
+    .headline-lg {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .headline-md {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+    }
+    .body-lg { font-size: 1.125rem; line-height: 1.9; color: var(--ink-soft); }
+    .body-md { font-size: 1rem; line-height: 1.85; color: var(--ink-soft); }
+    .gold-text { color: var(--gold); }
+    .muted { color: var(--ink-muted); }
+
+    /* ══════════════════════════════════════════ TICKER */
+    .ticker-bar {
+      position: fixed; top:0; width:100%; z-index:1002;
+      background: var(--obsidian); height: var(--ticker-h);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      overflow: hidden; display:flex; align-items:center;
+    }
+    .ticker-track { display:flex; align-items:center; white-space:nowrap; animation: tickerRoll 40s linear infinite; }
+    .ticker-inner {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.7);
+      padding-right: 120px;
+    }
+    .ticker-inner .status-dot { display:inline-block; width:7px; height:7px; background:var(--green); border-radius:50%; margin-right:6px; animation:pulse 2s ease-in-out infinite; }
+    .ticker-inner .gold { color: var(--gold-light); }
+    @keyframes tickerRoll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    /* ══════════════════════════════════════════ HEADER */
+    header {
+      position: fixed; top: var(--ticker-h); width:100%; z-index:1001;
+      height: var(--header-h);
+      background: rgba(249,246,239,0.92);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display:flex; align-items:center;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    header.scrolled { background: rgba(249,246,239,0.98); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+    .nav-row { display:flex; justify-content:space-between; align-items:center; width:100%; }
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem; letter-spacing:0.08em;
+      text-decoration:none; color:var(--ink);
+      font-weight:500;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display:flex; align-items:center; gap: var(--sp-2xl); }
+    .nav-links a {
+      text-decoration:none; color: var(--ink-soft);
+      font-size:0.85rem; font-weight:500; letter-spacing:0.02em;
+      position:relative; transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-3px; left:0; width:0; height:1px;
+      background:var(--gold); transition: width 0.35s var(--ease-gold);
+    }
+    .nav-links a:hover { color:var(--ink); }
+    .nav-links a:hover::after { width:100%; }
+    .nav-links a.active { color:var(--gold); }
+    .btn-book {
+      font-family:'JetBrains Mono', monospace;
+      font-size:0.72rem; letter-spacing:0.1em;
+      text-decoration:none; color:var(--obsidian) !important;
+      background: var(--gold); padding:10px 20px;
+      transition: background 0.3s, transform 0.2s;
+      font-weight:500;
+    }
+    .btn-book:hover { background: var(--gold-light); transform:translateY(-1px); }
+    .btn-book::after { display:none !important; }
+
+    /* Hamburger */
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; }
+    .hamburger span { display:block; width:22px; height:1.5px; background:var(--ink); transition:0.3s; transform-origin:center; }
+    .hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      position:fixed; top: var(--offset); left:0; width:100%; height:0;
+      background: rgba(249,246,239,0.98); backdrop-filter:blur(20px);
+      z-index:999; overflow:hidden;
+      transition: height 0.4s var(--ease-gold);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:var(--sp-2xl);
+    }
+    .mobile-nav.open { height: calc(100vh - var(--offset)); }
+    .mobile-nav a { font-size:1.5rem; font-family:'Cormorant Garamond',serif; text-decoration:none; color:var(--ink); font-weight:600; }
+    .mobile-nav a:hover { color:var(--gold); }
+
+    /* ══════════════════════════════════════════ HERO */
+    #welcome {
+      min-height: 100vh;
+      padding-top: var(--offset);
+      display:flex; align-items:center;
+      position:relative; overflow:hidden;
+      background: var(--cream);
+    }
+    .hero-bg-grid {
+      position:absolute; inset:0; z-index:0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 68px 68px;
+    }
+    .hero-bg-radial {
+      position:absolute; inset:0; z-index:1;
+      background: radial-gradient(ellipse 60% 60% at 50% 60%, rgba(249,246,239,0) 0%, var(--cream) 70%);
+    }
+    .hero-content { position:relative; z-index:2; padding: var(--sp-5xl) 0 var(--sp-4xl); }
+    .hero-label { margin-bottom: var(--sp-2xl); display:flex; align-items:center; gap:var(--sp-md); }
+    .hero-label-line { width:40px; height:1px; background:var(--gold); }
+    .hero-headline { margin-bottom: var(--sp-2xl); }
+    .hero-headline em { font-style:italic; color:var(--gold); }
+    .hero-sub {
+      max-width: 560px;
+      font-size:1.05rem; line-height:1.9;
+      color: var(--ink-soft);
+      margin-bottom: var(--sp-3xl);
+    }
+    .hero-actions { display:flex; align-items:center; gap:var(--sp-xl); flex-wrap:wrap; }
+    .btn-primary {
+      display:inline-block;
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.75rem; letter-spacing:0.12em;
+      text-transform:uppercase; text-decoration:none;
+      background:var(--obsidian); color:var(--gold);
+      padding:16px 32px; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.15); }
+    .btn-secondary {
+      font-family:'JetBrains Mono',monospace; font-size:0.75rem;
+      letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;
+      color:var(--gold); border-bottom:1px solid var(--gold);
+      padding-bottom:2px; transition:opacity 0.3s;
+    }
+    .btn-secondary:hover { opacity:0.65; }
+    .hero-scroll-hint {
+      position:absolute; bottom:var(--sp-3xl); left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:var(--sp-sm);
+      animation: float 3s ease-in-out infinite;
+    }
+    .hero-scroll-hint span { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-muted); }
+    .scroll-arrow { width:1px; height:42px; background:linear-gradient(to bottom, var(--gold), transparent); }
+    @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+
+    /* ══════════════════════════════════════════ ABOUT */
+    #about { background: var(--white); }
+    .about-grid {
+      display:grid;
+      grid-template-columns: 0.618fr 1fr;
+      gap: var(--sp-4xl);
+      align-items:start;
+    }
+    .about-img-wrap { position:sticky; top: calc(var(--offset) + var(--sp-3xl)); }
+    .about-img {
+      width:100%; aspect-ratio:3/4; object-fit:cover;
+      filter:grayscale(0.3) contrast(1.05);
+    }
+    .about-img-caption {
+      margin-top:var(--sp-lg);
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.65rem; letter-spacing:0.14em;
+      color:var(--ink-muted); line-height:1.6;
+    }
+    .about-stats {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:1px; background:#eee;
+      border:1px solid #eee; margin-top:var(--sp-2xl);
+    }
+    .stat-item { background:var(--white); padding:var(--sp-lg); }
+    .stat-label { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; margin-bottom:4px; }
+    .stat-val { font-size:0.82rem; color:var(--ink); line-height:1.4; }
+
+    .about-body p { margin-bottom:var(--sp-xl); }
+    .about-body p:first-of-type::first-letter {
+      font-family:'Cormorant Garamond',serif;
+      font-size:4rem; font-weight:600;
+      line-height:0.8; float:left;
+      margin: 4px 12px 0 0; color:var(--gold);
+    }
+
+    /* ══════════════════════════════════════════ SERVICES */
+    #services { background:var(--cream-2); }
+    .services-header { text-align:center; margin-bottom:var(--sp-4xl); }
+    .services-header p { max-width:680px; margin: var(--sp-xl) auto 0; }
+
+    /* Roles grid */
+    .roles-section { margin-bottom: var(--sp-4xl); }
+    .roles-grid {
+      display:flex; flex-wrap:wrap; gap:var(--sp-md);
+      margin-top:var(--sp-2xl);
+    }
+    .role-pill {
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.72rem; letter-spacing:0.1em;
+      padding:8px 18px; border:1px solid rgba(201,168,76,0.4);
+      color:var(--ink-soft); transition:0.3s; cursor:default;
+      background:var(--white);
+    }
+    .role-pill:hover { background:var(--gold); color:var(--obsidian); border-color:var(--gold); }
+
+    /* Services list */
+    .services-list-section { margin-bottom: var(--sp-4xl); }
+    .services-list { margin-top:var(--sp-2xl); display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #e0d9cc; }
+    .service-item {
+      padding: var(--sp-xl) var(--sp-2xl);
+      border-bottom:1px solid #e0d9cc;
+      display:flex; gap:var(--sp-lg); align-items:flex-start;
+      background:var(--white); transition:background 0.3s;
+    }
+    .service-item:nth-child(odd) { border-right:1px solid #e0d9cc; }
+    .service-item:hover { background:#fffdf7; }
+    .service-num { font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--gold); min-width:24px; margin-top:3px; }
+    .service-text { font-size:0.9rem; line-height:1.6; color:var(--ink-soft); }
+
+    /* Service categories */
+    .svc-category { margin-bottom: var(--sp-4xl); }
+    .svc-cat-header { margin-bottom: var(--sp-2xl); }
+    .svc-cat-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--obsidian); background: var(--gold);
+      padding: 6px 16px; margin-bottom: var(--sp-lg);
+    }
+    .svc-cat-desc { max-width: 760px; font-size: 0.97rem; line-height: 1.85; color: var(--ink-soft); }
+
+    /* Note block */
+    .services-note {
+      background:var(--obsidian); color:rgba(255,255,255,0.75);
+      padding:var(--sp-3xl); margin-top:var(--sp-3xl);
+      border-left:3px solid var(--gold);
+    }
+    .services-note p { font-size:0.95rem; line-height:1.8; }
+    .services-note strong { color:var(--gold-light); }
+
+    /* Process stepper */
+    #process { background:var(--white); }
+    .process-intro { max-width:680px; margin:0 auto var(--sp-4xl); text-align:center; }
+    .steps-wrap { max-width:760px; margin:0 auto; }
+    .step {
+      display:grid; grid-template-columns:60px 1fr;
+      gap:var(--sp-2xl); padding-bottom:var(--sp-3xl);
+      position:relative;
+    }
+    .step:not(:last-child)::before {
+      content:''; position:absolute;
+      left:29px; top:60px; bottom:0; width:1px;
+      background:linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .step-num-wrap { display:flex; flex-direction:column; align-items:center; }
+    .step-num {
+      width:60px; height:60px; border:1px solid var(--gold);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+      color:var(--gold); letter-spacing:0.1em; flex-shrink:0;
+      background:var(--white); position:relative; z-index:1;
+    }
+    .step-body h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; margin-bottom:var(--sp-md); color:var(--ink); }
+    .step-body p { font-size:0.95rem; line-height:1.8; color:var(--ink-soft); }
+
+    .process-cta { text-align:center; margin-top:var(--sp-4xl); }
+
+    /* ══════════════════════════════════════════ VAULT */
+    #vault { background:var(--obsidian); color:rgba(255,255,255,0.85); }
+    #vault .label { color:var(--gold); }
+    .vault-header { text-align:center; margin-bottom:var(--sp-4xl); }
+    .vault-header .headline-lg { color:var(--white); }
+
+    .vault-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(201,168,76,0.15); margin-bottom:var(--sp-3xl); }
+    .vault-cell { background:var(--obsidian-2); padding:var(--sp-3xl); }
+    .vault-cell h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--gold-light); margin-bottom:var(--sp-lg); }
+    .vault-cell p, .vault-cell li { font-size:0.9rem; line-height:1.8; color:rgba(255,255,255,0.65); }
+    .vault-cell ul { padding-left:0; }
+    .vault-cell li { padding:var(--sp-sm) 0; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:flex-start; gap:var(--sp-md); }
+    .vault-cell li span.arrow { color:var(--gold); flex-shrink:0; }
+
+    .termination-box {
+      border:1px solid rgba(192,57,43,0.5);
+      background:rgba(192,57,43,0.07);
+      padding:var(--sp-2xl) var(--sp-3xl);
+      margin-bottom:var(--sp-3xl);
+      text-align:center;
+    }
+    .termination-box p {
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.78rem; letter-spacing:0.08em;
+      color:rgba(255,100,100,0.9); line-height:1.8;
+    }
+
+    .revenue-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(201,168,76,0.15); }
+    .revenue-card { background:var(--obsidian-3); padding:var(--sp-2xl); text-align:center; }
+    .revenue-card .r-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; margin-bottom:var(--sp-sm); }
+    .revenue-card p { font-size:0.85rem; color:rgba(255,255,255,0.6); line-height:1.7; }
+
+    /* ══════════════════════════════════════════ MOVEMENT */
+    #movement { background:var(--cream-2); }
+    .movement-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4xl); align-items:center; }
+    .movement-body h2 { margin-bottom:var(--sp-lg); }
+    .movement-body p { margin-bottom:var(--sp-xl); }
+    .movement-badge {
+      display:inline-block;
+      font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+      letter-spacing:0.15em; text-transform:uppercase;
+      padding:6px 14px; border:1px solid var(--gold);
+      color:var(--gold); margin-bottom:var(--sp-xl);
+    }
+    .movement-join {
+      display:inline-flex; align-items:center; gap:var(--sp-md);
+      background:var(--obsidian); color:var(--gold);
+      padding:var(--sp-lg) var(--sp-2xl);
+      text-decoration:none; font-family:'JetBrains Mono',monospace;
+      font-size:0.75rem; letter-spacing:0.1em;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .movement-join:hover { background:var(--obsidian-3); transform:translateY(-2px); }
+    .wa-icon-sm { width:18px; height:18px; fill:var(--gold); }
+
+    .seekers-grid { display:flex; flex-wrap:wrap; gap:var(--sp-sm); margin-top:var(--sp-2xl); }
+    .seeker-tag {
+      font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+      letter-spacing:0.08em; padding:5px 12px;
+      background:var(--white); border:1px solid #ddd;
+      color:var(--ink-soft); transition:0.25s;
+    }
+    .seeker-tag:hover { border-color:var(--gold); color:var(--gold); }
+
+    /* ══════════════════════════════════════════ CONTACT */
+    #contact { background:var(--obsidian); color:var(--white); text-align:center; }
+    #contact .headline-xl { color:var(--white); }
+    #contact .headline-xl em { color:var(--gold); }
+    .contact-sub { max-width:520px; margin:var(--sp-xl) auto var(--sp-4xl); opacity:0.65; font-size:1rem; }
+
+    .social-grid {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:var(--sp-lg);
+      margin-bottom:var(--sp-4xl);
+    }
+    .social-link {
+      width:56px; height:56px;
+      border:1px solid rgba(201,168,76,0.3);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--gold); text-decoration:none;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+    }
+    .social-link:hover { border-color:var(--gold); background:var(--gold-dim); transform:translateY(-3px); }
+    .social-link svg { width:22px; height:22px; fill:currentColor; }
+
+    .direct-links { display:flex; flex-direction:column; align-items:center; gap:var(--sp-md); margin-bottom:var(--sp-3xl); }
+    .direct-link {
+      display:inline-flex; align-items:center; gap:var(--sp-md);
+      font-family:'JetBrains Mono',monospace; font-size:0.85rem;
+      color:var(--gold-light); text-decoration:none;
+      transition: opacity 0.3s; letter-spacing:0.04em;
+    }
+    .direct-link:hover { opacity:0.65; text-decoration:underline; }
+    .direct-link svg { width:18px; height:18px; fill:currentColor; flex-shrink:0; }
+
+    .privacy-link { font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:rgba(255,255,255,0.3); letter-spacing:0.1em; text-decoration:none; transition:color 0.3s; }
+    .privacy-link:hover { color:var(--gold); }
+
+    .footer-root {
+      margin-top:var(--sp-4xl); padding-top:var(--sp-2xl);
+      border-top:1px solid rgba(255,255,255,0.06);
+      font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+      letter-spacing:0.12em; color:rgba(255,255,255,0.2);
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--sp-md);
+    }
+
+    /* ══════════════════════════════════════════ FLOATING WHATSAPP */
+    .wa-float {
+      position:fixed; bottom:var(--sp-3xl); right:var(--sp-2xl); z-index:9000;
+      width:56px; height:56px; border-radius:50%;
+      background:#25D366; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 6px 24px rgba(37,211,102,0.45);
+      text-decoration:none; transition:transform 0.3s var(--ease-snap), box-shadow 0.3s;
+      animation:waFloat 3s ease-in-out infinite;
+    }
+    .wa-float:hover { transform:scale(1.1); box-shadow:0 12px 36px rgba(37,211,102,0.6); }
+    .wa-float svg { width:28px; height:28px; fill:#fff; }
+    @keyframes waFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    /* ══════════════════════════════════════════ DIVIDER */
+    .gold-divider { width:42px; height:2px; background:var(--gold); margin:var(--sp-xl) 0; }
+    .gold-divider.center { margin:var(--sp-xl) auto; }
+
+    /* ══════════════════════════════════════════ SECTION LABEL ROW */
+    .section-label-row { display:flex; align-items:center; gap:var(--sp-lg); margin-bottom:var(--sp-2xl); }
+    .section-label-line { flex:1; height:1px; background:linear-gradient(to right, rgba(201,168,76,0.4), transparent); }
+
+    /* ══════════════════════════════════════════ RESPONSIVE */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns:1fr; }
+      .about-img-wrap { position:relative; top:auto; max-width:280px; }
+      .vault-grid { grid-template-columns:1fr; }
+      .revenue-row { grid-template-columns:1fr; }
+      .movement-grid { grid-template-columns:1fr; }
+      .services-list { grid-template-columns:1fr; }
+      .service-item:nth-child(odd) { border-right:none; }
+    }
+    @media (max-width: 768px) {
+      :root { --sp-5xl: 100px; --sp-4xl: 68px; }
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .hero-actions { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width: 480px) {
+      :root { --sp-5xl: 80px; --sp-4xl: 52px; }
+      .container { padding:0 var(--sp-lg); }
+    }
+    @media (hover:none) { .cursor-dot, .cursor-ring { display:none; } body { cursor:auto; } }
+  </style>
 </head>
 <body>
 
-    <div class="ticker-wrap">
-        <div class="ticker mono">
-            [ SYSTEM STATUS: ACTIVE ] • ACCEPTING 2 NEW CLIENTS FOR MARCH • ROOT COORDINATE: DAMAK, NEPAL • EVOLUTION OVER DEGRADATION
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-bar" role="marquee" aria-label="Site status">
+  <div class="ticker-track">
+    <div class="ticker-inner">
+      <span class="status-dot"></span>
+      SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; ACCEPTING 2 NEW SEEKERS FOR MARCH &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;
+    </div>
+    <div class="ticker-inner" aria-hidden="true">
+      <span class="status-dot"></span>
+      SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; ACCEPTING 2 NEW SEEKERS FOR MARCH &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header id="site-header">
+  <div class="container nav-row">
+    <a href="#welcome" class="nav-logo">:: <span>KHEM RAJ PRADHAN</span> ::</a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="#about">The Journey</a></li>
+        <li><a href="#services">Architecture</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#vault">The Vault</a></li>
+        <li><a href="#movement">Movement</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-book">BOOK A CALL</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="#about" class="mob-link">The Journey</a>
+  <a href="#services" class="mob-link">Architecture</a>
+  <a href="#process" class="mob-link">Process</a>
+  <a href="#vault" class="mob-link">The Vault</a>
+  <a href="#movement" class="mob-link">Movement</a>
+  <a href="#contact" class="mob-link">Contact</a>
+  <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-book" style="margin-top:16px;">BOOK A CALL</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 1 — HERO / WELCOME
+═══════════════════════════════════════════════ -->
+<section id="welcome">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-radial"></div>
+  <div class="container hero-content">
+    <div class="hero-label reveal">
+      <div class="hero-label-line"></div>
+      <span class="label">Damak, Nepal — Est. 2025</span>
+    </div>
+    <h1 class="headline-xl hero-headline reveal delay-1">
+      Restructuring<br><em>Life</em> &amp; Purpose
+    </h1>
+    <p class="hero-sub reveal delay-2">
+      Welcome. I have made this as simple as possible — it should take no more than 5 to 10 minutes to fully understand what this is about. Please keep patience and follow along. I am sure I can offer you what you need.
+    </p>
+    <div class="hero-actions reveal delay-3">
+      <a href="#about" class="btn-primary">BEGIN THE JOURNEY</a>
+      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-secondary">INITIALIZE RESEARCH CALL →</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 2 — ABOUT / KHEM
+═══════════════════════════════════════════════ -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- LEFT: Image -->
+      <div class="about-img-wrap reveal-left">
+        <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan — Systems Researcher & Life Companion, Damak Nepal" class="about-img" loading="lazy" width="420" height="560">
+        <div class="about-img-caption">
+          <p>Navigating the Middle Path</p>
+          <p>KHEM RAJ PRADHAN</p>
+          <p>Damak, Province No. 1, Nepal</p>
         </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-label">Focus</div>
+            <div class="stat-val">Human · Nature · Technology</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Future</div>
+            <div class="stat-val">Regenerative &amp; Natural</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Method</div>
+            <div class="stat-val">Deconstruction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Output</div>
+            <div class="stat-val">Restructuring</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Bio -->
+      <div class="reveal-right">
+        <div class="section-label-row">
+          <span class="label">Zone 02 — The Journey</span>
+          <div class="section-label-line"></div>
+        </div>
+        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">
+          Navigating the Middle Path:<br>
+          <em style="color:var(--gold);">A Companion for Your Life Journey</em>
+        </h2>
+        <div class="about-body body-md">
+          <p>The present world is loud, noisy, misleading, confusing, and manipulative because most of the systems we live in are designed for profit, possession, control, dominance — not for unity, sharing, and the evolution of people. I call it a <strong>"Failing Social System."</strong> The future of this type of social advancement is dangerous for all of Humanity, Nature and Technology. And we are all too busy to understand where we are failing and what is not working in our lives.</p>
+
+          <p>Coming from a small village in the hills of Nepal, I am Khem Raj Pradhan. My life has been full of ups and downs like everyone else's — because of this system we live in. My life is a research project itself into what it means to be human: full of doubts, pain, suffering, judgment, criticism, alone, lost, broke — and again finding happiness, joy, purpose, balance, becoming a versatile, dynamic human.</p>
+
+          <p>From an early age, rather than chasing money and following the mainstream world in times of struggle, I chose to sacrifice the implanted desires and purposes. I realized that school and society were not teaching things I wanted to learn in life, so I started finding my own books, looking for my own teachers, and travelling to understand life, break rules, and find knowledge and wisdom. I lived among multiple religious groups, worked in multiple fields, collaborated with people from around the world on different projects, and learned many inconvenient ways of life. Now I want to share my findings to help others understand life, too.</p>
+
+          <p>I don't offer a 'program' or a 'product.' I offer my experiences, insights, skills, and hand as a companion to those who are ready to unlearn the noise of the failing social system, step away from the rat race, and discover a self — an alternative, regenerative, and natural lifestyle path.</p>
+
+          <p>Whether we are discussing the structure of your life or the strength of your body, my goal is the same: <strong>Evolution over Degradation.</strong> I want to help you identify your problems together with you, as your friend and companion — understand them well, find the root cause, and find solutions to fix them. You don't have to navigate the transition alone.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 3 — SERVICES / ARCHITECTURE
+═══════════════════════════════════════════════ -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label-row" style="justify-content:center;">
+        <div class="section-label-line" style="max-width:80px;"></div>
+        <span class="label">Zone 03 — The Architecture</span>
+        <div class="section-label-line" style="max-width:80px; background:linear-gradient(to left, rgba(201,168,76,0.4), transparent);"></div>
+      </div>
+      <h2 class="headline-lg" style="margin:var(--sp-lg) 0;">:: HOW I CAN HELP</h2>
+      <div class="gold-divider center"></div>
+      <p class="body-lg">Here is how I work, the services I provide, and how to hire me. Everything I provide is based on natural law and regenerative methods to bring back balance and harmony to your existence.</p>
     </div>
 
-    <header>
-        <div class="container nav-row">
-            <a href="#" class="nav-logo">:: KHEM RAJ PRADHAN ::</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">The Journey</a></li>
-                    <li><a href="#services">Architecture</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta">BOOK A CALL</a></li>
-                </ul>
-            </nav>
+    <!-- Section 1: You can hire me as -->
+    <div class="roles-section reveal">
+      <h3 class="headline-md">You can hire me as:</h3>
+      <div class="roles-grid">
+        <div class="role-pill">Friend</div>
+        <div class="role-pill">Companion</div>
+        <div class="role-pill">Therapeutic Listener</div>
+        <div class="role-pill">Guide</div>
+        <div class="role-pill">Advisor</div>
+        <div class="role-pill">Trainer</div>
+        <div class="role-pill">Mentor</div>
+        <div class="role-pill">Designer</div>
+        <div class="role-pill">Labour</div>
+        <div class="role-pill">Project Manager</div>
+        <div class="role-pill">Event Organiser</div>
+        <div class="role-pill">Filming Companion</div>
+        <div class="role-pill">Research Partner</div>
+        <div class="role-pill">Life Spy</div>
+        <div class="role-pill">Critic &amp; Judge</div>
+      </div>
+    </div>
+
+    <!-- Section 2: Services by category -->
+    <div class="services-list-section">
+
+      <!-- Category intro -->
+      <div class="reveal" style="text-align:center; margin-bottom:var(--sp-4xl);">
+        <h3 class="headline-md">What help can I provide?</h3>
+        <div class="gold-divider center"></div>
+        <p class="body-md" style="max-width:660px; margin:0 auto;">My work adapts to who you are and what you need. Below you will find exactly what I can offer — broken down by who I work with. Find your category and read what applies to you.</p>
+      </div>
+
+      <!-- INDIVIDUALS -->
+      <div class="svc-category reveal">
+        <div class="svc-cat-header">
+          <div class="svc-cat-tag">For Individuals</div>
+          <p class="svc-cat-desc">You are one person navigating life — feeling stuck, lost, or simply wanting to grow. Whether the friction is internal (your mindset, habits, body, or purpose) or external (your space, relationships, or direction), I work alongside you as a trusted companion to find the root causes and move toward a better version of your life.</p>
         </div>
-    </header>
-
-    <canvas id="digital-vastu-canvas"></canvas>
-
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="h-lg">Architecting<br><span class="gold-text">Regenerative</span><br>Alternatives</h1>
-            <p class="mono gold-text">[ WELCOME TO THE RESEARCH PROJECT OF LIFE ]</p>
+        <div class="services-list">
+          <div class="service-item"><span class="service-num">01</span><span class="service-text"><strong>Deep conversation partner.</strong> Talk about anything without judgment — philosophy, religion, politics, love, trauma, sexuality, spirituality, conspiracies, darkness, visions, or goals. I listen, reflect, and help you think more clearly.</span></div>
+          <div class="service-item"><span class="service-num">02</span><span class="service-text"><strong>Daily life companion.</strong> Share a meal, a walk, a coffee, a shopping trip, or a day out. Sometimes what a person needs is simply someone present and engaged — not advice, just genuine company.</span></div>
+          <div class="service-item"><span class="service-num">03</span><span class="service-text"><strong>Health, routine &amp; Ayurveda.</strong> I help you align with the rhythms of nature — designing daily routines, timetables, seasonal eating habits, micro-habits, and time management practices rooted in Ayurvedic principles.</span></div>
+          <div class="service-item"><span class="service-num">04</span><span class="service-text"><strong>Astrology &amp; self-understanding.</strong> I help you understand your birth chart, astrological patterns, and what they reveal about your character, strengths, blind spots, and life direction.</span></div>
+          <div class="service-item"><span class="service-num">05</span><span class="service-text"><strong>Vastu Shastra.</strong> I consult on and redesign your living space using Vastu principles — adjusting the flow, direction, and arrangement of your home or room to bring balance and harmony to your daily environment.</span></div>
+          <div class="service-item"><span class="service-num">06</span><span class="service-text"><strong>Yoga, meditation &amp; physical practice.</strong> I can be your yoga teacher, meditation guide, or massage partner. I also train alongside you in football, MMA, wrestling, jujutsu, swimming, basketball, or any physical discipline — as both companion and teacher.</span></div>
+          <div class="service-item"><span class="service-num">07</span><span class="service-text"><strong>Outdoor &amp; adventure companion.</strong> I guide and accompany you on hikes, treks, camping trips, fishing, and travel — teaching practical skills along the way and helping you reconnect with nature.</span></div>
+          <div class="service-item"><span class="service-num">08</span><span class="service-text"><strong>Personal brand &amp; digital presence.</strong> I help you build a personal brand, manage social media, create a website, and design a clear, authentic public identity that reflects who you truly are.</span></div>
+          <div class="service-item"><span class="service-num">09</span><span class="service-text"><strong>Life design &amp; purpose.</strong> I help you understand your body type, identify your purpose, clarify your future, and build a realistic lifestyle plan to achieve your vision — step by step, without overwhelm.</span></div>
+          <div class="service-item"><span class="service-num">10</span><span class="service-text"><strong>Hands-on &amp; DIY.</strong> I help with practical home tasks — basic plumbing, carpentry, painting, welding, and building projects. Useful, grounding, and often therapeutic.</span></div>
         </div>
-    </section>
+      </div>
 
-    <section id="about" class="section-padding">
-        <div class="container grid-2">
-            <div>
-                <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan" class="profile-img">
-                <div class="mono" style="font-size: 0.7rem; opacity: 0.5;">
-                    <p>Navigating the Middle Path: </p>
-                    <p>KHEM RAJ PRADHAN</p>
-                </div>
-            </div>
-            <div class="bio-text">
-                <h2 class="headline-sm">: A Companion for the LIFE Journey</h2>
-                <p>Today’s world is very noisy. Many systems around us care more about profit than people. I am <strong>Khem Raj Pradhan</strong>. I am sharing my experiences, ideas, and support with people who want to step away from the rat race and explore a simpler, natural, and meaningful way of living.</p>  
-                
-                <p>I come from a small village in the hills of Nepal. My life has had many ups and downs. I have experienced being alone, lost, and broke, but also learning how to find balance again. Instead of only chasing money during hard times, I chose to understand life. After leaving school, I traveled to many places to learn from experience. Now, I want to share what I learned so others can understand life better, too.</p>
-                
-                <p>Whether it is about improving your life or strengthening your body, my goal is simple: <strong>Evolution, not degradation</strong>. I want to work with you like a friend to understand the problems in your life, find their root causes, and help you move toward better solutions. You don’t have to face the journey alone.</p>            
-            </div>
+      <!-- FAMILIES -->
+      <div class="svc-category reveal">
+        <div class="svc-cat-header">
+          <div class="svc-cat-tag">For Families</div>
+          <p class="svc-cat-desc">When the whole family is ready to work together, I come in as a neutral observer, facilitator, and guide. I help families solve deep-rooted problems, build unity, distribute responsibilities clearly, and design a shared vision for the future — whether that involves a home, a garden, a family business, or simply a healthier way of living together.</p>
         </div>
-    </section>
-
-    <section id="services" class="section-padding light-bg">
-        <div class="container">
-            <div class="services-intro">
-                <h2 class="headline-sm">How I Help</h2>
-                <p>I care for humanity, nature, and technology. Everything I provide is based on natural law and regenerative methods to bring back balance and harmony to your existence.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>The Personal Path</h3>
-                    <ul>
-                        <li>Talk about anything: philosophy, traumas, visions, or darkness.</li>
-                        <li>Fixing habits, routines, and time management.</li>
-                        <li>Ayurvedic eating habits and diet guidance.</li>
-                        <li>Understanding Astrological patterns and Vastu Shastra.</li>
-                        <li>Yoga, meditation, and physical sports companionship (MMA, Wrestling).</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>Spatial & Creative</h3>
-                    <ul>
-                        <li>Designing Permaculture farms and urban mini-gardens.</li>
-                        <li>Eco-architecture and designing homes with eco-principles.</li>
-                        <li>DIY projects: fixing plumbing, carpentry, and painting.</li>
-                        <li>Outdoor guidance: hiking, trekking, camping, and fishing.</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>Business Architecture</h3>
-                    <ul>
-                        <li>Designing and running ethical regenerative businesses.</li>
-                        <li>Market research, branding, and marketing strategy.</li>
-                        <li>Social media management and video/film editing lessons.</li>
-                        <li>Business "Spying": Identifying losses, leaks, and friction in your team.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="contact-box text-center" style="background:#fff; border: 1px solid #eee; margin-top: 60px;">
-                <h3 class="headline-sm">For Families & Teams</h3>
-                <p>If your whole family is ready, I can work with all members to solve problems, build unity, and distribute responsibilities. For businesses, I act as an observer to erase friction and filter unnecessary noise from your operations.</p>
-            </div>
+        <div class="services-list">
+          <div class="service-item"><span class="service-num">01</span><span class="service-text"><strong>Family problem-solving &amp; mediation.</strong> I observe family dynamics, identify recurring conflicts and unspoken frictions, and facilitate honest conversations that lead to real resolution — not temporary compromise.</span></div>
+          <div class="service-item"><span class="service-num">02</span><span class="service-text"><strong>Unity &amp; responsibility design.</strong> I help distribute roles and responsibilities among family members in a way that suits each person's strengths, reducing resentment and building genuine cooperation.</span></div>
+          <div class="service-item"><span class="service-num">03</span><span class="service-text"><strong>Home &amp; garden design.</strong> I design homes using eco-architecture and eco-partition principles, and create permaculture gardens, urban food systems, or regenerative outdoor spaces for the whole family to benefit from.</span></div>
+          <div class="service-item"><span class="service-num">04</span><span class="service-text"><strong>Family business planning.</strong> I help families plan, organise, and operate a shared business — aligning vision, clarifying roles, and building systems that prevent the common tensions that arise when family and business mix.</span></div>
+          <div class="service-item"><span class="service-num">05</span><span class="service-text"><strong>Future planning together.</strong> I guide the family in building a shared long-term plan — for life, finances, land, education, and community — rooted in natural law and regenerative principles.</span></div>
         </div>
-    </section>
+      </div>
 
-    <section id="contact" class="section-padding dark-bg">
-        <div class="container text-center">
-            <h2 class="h-lg gold-text">Let's Talk.</h2>
-            <p style="max-width: 600px; margin: 0 auto 40px auto; opacity: 0.8;">If you feel the friction in your life or business, don't wait. Reach out. I am here as a friend and a guide.</p>
-            
-<div class="contact-box">
-    <p class="mono gold-text" style="margin-bottom: 25px;">[ INITIALIZE CONTACT ]</p>
-    
-    <a href="mailto:email@khemrajpradhan.com.np" class="contact-link">
-        email@khemrajpradhan.com.np
-    </a>
-    
-    <a href="https://wa.me/9779840852582" target="_blank" class="contact-link">
-        WhatsApp: +977 9840852582
-    </a>
-    
-    <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" class="btn-cta" style="display:inline-block; margin-top: 20px;">
-        FILL THE SINCERITY FORM
-    </a>
-</div>
-            <div style="margin-top: 60px; opacity: 0.5; font-size: 0.8rem;" class="mono">
-                <p>DAMAK, NEPAL | ALL RIGHTS RESERVED © 2026</p>
-            </div>
+      <!-- BUSINESSES -->
+      <div class="svc-category reveal">
+        <div class="svc-cat-header">
+          <div class="svc-cat-tag">For Businesses</div>
+          <p class="svc-cat-desc">I enter a business the way a researcher enters a system — observing quietly, mapping friction, and identifying what is draining energy, money, and morale. I work as an insider observer, not an outsider consultant. My approach is to understand your business from within, then help restructure it into something ethical, efficient, and sustainable.</p>
         </div>
-    </section>
+        <div class="services-list">
+          <div class="service-item"><span class="service-num">01</span><span class="service-text"><strong>Business observation &amp; friction mapping.</strong> I spend time inside your business — watching operations, team interactions, and workflows — to identify losses, loopholes, redundancies, and hidden drains that numbers alone do not reveal.</span></div>
+          <div class="service-item"><span class="service-num">02</span><span class="service-text"><strong>Team training &amp; culture.</strong> I work directly with your team to improve communication, accountability, and working culture — removing the noise that slows people down and replacing it with clarity and shared purpose.</span></div>
+          <div class="service-item"><span class="service-num">03</span><span class="service-text"><strong>Branding, marketing &amp; social media.</strong> I help design your brand identity, build a marketing strategy, manage social media presence, produce video content, and teach your team to run it independently.</span></div>
+          <div class="service-item"><span class="service-num">04</span><span class="service-text"><strong>Ethical &amp; regenerative business design.</strong> For new or existing businesses, I help you build a model that is profitable without being exploitative — designing operations, supply chains, and customer relationships rooted in natural law and long-term thinking.</span></div>
+          <div class="service-item"><span class="service-num">05</span><span class="service-text"><strong>Supplier, vendor &amp; market research.</strong> I research and identify the right suppliers, vendors, and market opportunities — helping you make informed decisions rather than reactive ones.</span></div>
+        </div>
+      </div>
 
-    <script>
-        const canvas = document.getElementById('digital-vastu-canvas');
-        const ctx = canvas.getContext('2d');
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.addEventListener('resize', resize);
-        resize();
+      <!-- NON-PROFITS / MOVEMENTS -->
+      <div class="svc-category reveal">
+        <div class="svc-cat-header">
+          <div class="svc-cat-tag">For Non-Profits &amp; Social Movements</div>
+          <p class="svc-cat-desc">If you are running a community initiative, social project, or grassroots movement with a genuine mission, I offer my time, research skills, and hands as a companion and collaborator. I believe the future belongs to people who are trying to build something better — and I want to support that work in whatever way is most useful.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item"><span class="service-num">01</span><span class="service-text"><strong>Research &amp; planning partner.</strong> I help non-profits and movements research their cause deeply, understand the systems they are trying to change, and build a clear, grounded strategy for long-term impact.</span></div>
+          <div class="service-item"><span class="service-num">02</span><span class="service-text"><strong>Community design &amp; event organisation.</strong> I assist in organising events, gatherings, and community activities — from concept and logistics to facilitation and follow-up.</span></div>
+          <div class="service-item"><span class="service-num">03</span><span class="service-text"><strong>Content, filming &amp; storytelling.</strong> I help document your work through video, social media, and written content — giving your mission a clear and compelling voice that reaches the right people.</span></div>
+          <div class="service-item"><span class="service-num">04</span><span class="service-text"><strong>Regenerative infrastructure.</strong> For community land or spaces, I help design permaculture systems, eco-architecture, and regenerative food production to make the project self-sustaining over time.</span></div>
+        </div>
+      </div>
 
-        function drawGrid() {
-            ctx.strokeStyle = '#d4af37';
-            ctx.lineWidth = 0.1;
-            for (let x = 0; x < canvas.width; x += 80) {
-                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
-            }
-            for (let y = 0; y < canvas.height; y += 80) {
-                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
-            }
-        }
-        drawGrid();
-    </script>
-</body>
-</html>
+    </div>
+
+    <!-- Note -->
+    <div class="services-note reveal">
+      <p><strong>Note:</strong> All services I provide are natural law-based and regenerative. I care deeply about humanity, nature, technology, and — most importantly — the future. Everything is rooted in balance and harmony. I will only provide paths, solutions, and advice that will not harm human evolution or nature. I see every element from multiple dimensions to ensure we all evolve into a healthier, smarter, better, and cleaner future.</p>
+      <p style="margin-top:var(--sp-lg);"><strong>So much of my advice may be radical, the bitter truth, and far from mainstream teachings and lifestyle. Be ready for it.</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PROCESS
+═══════════════════════════════════════════════ -->
+<section id="process" class="section-pad">
+  <div class="container">
+    <div class="process-intro reveal">
+      <div class="section-label-row" style="justify-content:center;">
+        <div class="section-label-line" style="max-width:80px;"></div>
+        <span class="label">Zone 03b — The Process</span>
+        <div class="section-label-line" style="max-width:80px; background:linear-gradient(to left, rgba(201,168,76,0.4), transparent);"></div>
+      </div>
+      <h2 class="headline-lg" style="margin: var(--sp-lg) 0;">How Does the Process Work?</h2>
+      <div class="gold-divider center"></div>
+      <p class="body-md">Four phases. One clear path toward truth and transformation.</p>
+    </div>
+
+    <div class="steps-wrap">
+      <div class="step reveal delay-1">
+        <div class="step-num-wrap">
+          <div class="step-num">01</div>
+        </div>
+        <div class="step-body">
+          <h3>Deconstruction — The Truth</h3>
+          <p>We start by fully reading and understanding this website together. Then you fill out the form to book an hour-long video call with Khem. If the problem is solved in that call, it's good. If problems are still unclear and need more follow-up, we arrange a short week-long visit at your place.</p>
+        </div>
+      </div>
+      <div class="step reveal delay-2">
+        <div class="step-num-wrap">
+          <div class="step-num">02</div>
+        </div>
+        <div class="step-body">
+          <h3>Identification — The Friction</h3>
+          <p>Khem will live with you closely for a week — observing your daily routines, seasons, environments, foods, timetables, people you meet, work patterns, body postures, sleeping time, eating habits, and everything in between. Do not worry; that is what you hired me for. Khem will be your best friend and advisor, making it easy and not uncomfortable.</p>
+        </div>
+      </div>
+      <div class="step reveal delay-3">
+        <div class="step-num-wrap">
+          <div class="step-num">03</div>
+        </div>
+        <div class="step-body">
+          <h3>Design — The Blueprint</h3>
+          <p>After a week, Khem will suggest small, specific changes — one at a time. Nothing overwhelming. Only what is truly necessary to shift the direction of your life toward evolution. Every recommendation is rooted in natural law, Ayurveda, spatial intelligence, and systems thinking.</p>
+        </div>
+      </div>
+      <div class="step reveal delay-4">
+        <div class="step-num-wrap">
+          <div class="step-num">04</div>
+        </div>
+        <div class="step-body">
+          <h3>Implementation — The Reality</h3>
+          <p>If the process requires more time, Khem will continue staying with you for as long as you need. The journey does not end at a plan — it ends when the change is real and felt in your daily life.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-cta reveal">
+      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-primary">[ INITIALIZE RESEARCH CALL ]</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 4 — THE VAULT
+═══════════════════════════════════════════════ -->
+<section id="vault" class="section-pad">
+  <div class="container">
+    <div class="vault-header reveal">
+      <div class="section-label-row" style="justify-content:center;">
+        <div class="section-label-line" style="max-width:80px; background:linear-gradient(to right, rgba(201,168,76,0.4), transparent);"></div>
+        <span class="label">Zone 04 — The Vault</span>
+        <div class="section-label-line" style="max-width:80px; background:linear-gradient(to left, rgba(201,168,76,0.4), transparent);"></div>
+      </div>
+      <h2 class="headline-lg" style="color:var(--white); margin:var(--sp-lg) 0;">Ethics, Terms &amp; How I Work</h2>
+      <div class="gold-divider center"></div>
+    </div>
+
+    <div class="termination-box reveal">
+      <p>⚠ TERMINATION CLAUSE: THE WORK WILL BE TERMINATED IF YOU DO NOT FOLLOW MORE THAN 3 PIECES OF ADVICE, TIPS, FIXES, AND HABIT CHANGES — AND WILL NOT BE REFUNDED.</p>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 5 — HUNATE MOVEMENT
+═══════════════════════════════════════════════ -->
+<section id="movement" class="section-pad">
+  <div class="container">
+    <div class="movement-grid">
+      <div class="reveal-left">
+        <div class="section-label-row">
+          <span class="label">Zone 05 — The Movement</span>
+          <div class="section-label-line"></div>
+        </div>
+        <div class="movement-badge">Est. 2013 — Formerly The Joon Project</div>
+        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">The Hunate<br><em style="color:var(--gold);">Movement</em></h2>
+        <div class="body-md">
+          <p>Known as The Joon Project in the past, started in 2013, now renamed as the Hunate Movement from 2025 — this is an independent research and development social movement where Khem is spreading awareness and collecting like-minded individuals who are passionate about finding, understanding, and identifying the root causes of the failing social system, and redesigning and restructuring them for a better future of mankind, nature, and technology.</p>
+          <p>Right now, Khem is collecting individuals: free thinkers, visionaries, lawyers, social engineers, astrologers, Ayurveda experts, Vastu consultants, permaculture farm designers, eco architects, renewable energy engineers, computer engineers, mechanical engineers, civil engineers, cinematographers, journalists, teachers, and skilled individuals in carpentry, gardening, pottery, plumbing, welding, ironsmithing, and more.</p>
+        </div>
+        <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="movement-join" style="margin-top:var(--sp-2xl);">
+          <svg class="wa-icon-sm" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          JOIN THE MOVEMENT — +977 9816860282
+        </a>
+      </div>
+      <div class="reveal-right">
+        <p class="label" style="margin-bottom:var(--sp-lg);">We are looking for:</p>
+        <div class="seekers-grid">
+          <span class="seeker-tag">Free Thinkers</span>
+          <span class="seeker-tag">Visionaries</span>
+          <span class="seeker-tag">Lawyers</span>
+          <span class="seeker-tag">Social Engineers</span>
+          <span class="seeker-tag">Astrologers</span>
+          <span class="seeker-tag">Ayurveda Experts</span>
+          <span class="seeker-tag">Vastu Consultants</span>
+          <span class="seeker-tag">Permaculture Designers</span>
+          <span class="seeker-tag">Eco Architects</span>
+          <span class="seeker-tag">Renewable Energy Engineers</span>
+          <span class="seeker-tag">Computer Engineers</span>
+          <span class="seeker-tag">Mechanical Engineers</span>
+          <span class="seeker-tag">Civil Engineers</span>
+          <span class="seeker-tag">Cinematographers</span>
+          <span class="seeker-tag">Journalists</span>
+          <span class="seeker-tag">Teachers</span>
+          <span class="seeker-tag">Carpenters</span>
+          <span class="seeker-tag">Gardeners</span>
+          <span class="seeker-tag">Potters</span>
+          <span class="seeker-tag">Plumbers</span>
+          <span class="seeker-tag">Welders</span>
+          <span class="seeker-tag">Ironsmiths</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 6 — CONTACT / TERMINAL
+═══════════════════════════════════════════════ -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="section-label-row" style="justify-content:center;" >
+      <div class="section-label-line" style="max-width:80px; background:linear-gradient(to right,rgba(201,168,76,0.3),transparent);"></div>
+      <span class="label">Zone 06 — The Terminal</span>
+      <div class="section-label-line" style="max-width:80px; background:linear-gradient(to left,rgba(201,168,76,0.3),transparent);"></div>
+    </div>
+
+    <h2 class="headline-xl reveal" style="margin:var(--sp-xl) 0;">Connect with <em>Khem?</em></h2>
+    <p class="contact-sub reveal delay-1">If you feel the friction in your life or business, do not wait. Reach out. I am here as a friend and a guide.</p>
+
+    <!-- Social Icons -->
+    <div class="social-grid reveal delay-2">
+      <!-- YouTube -->
+      <a href="https://youtube.com/@khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://facebook.com/khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <!-- X / Twitter -->
+      <a href="https://x.com/khemrajpradhan" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+      </a>
+    </div>
+
+    <!-- Direct Links -->
+    <div class="direct-links reveal delay-3">
+      <a href="/cdn-cgi/l/email-protection#c9aca4a8a0a589a2a1aca4bba8a3b9bba8ada1a8a7e7aaa6a4e7a7b9" class="direct-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span class="__cf_email__" data-cfemail="056068646c69456e6d606877646f757764616d646b2b666a682b6b75">[email&#160;protected]</span>
+      </a>
+      <a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="direct-link">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +977 9840852582
+      </a>
+    </div>
+
+    <a href="privacy-policy.html" class="privacy-link reveal delay-4">Privacy Policy &amp; Data Terms</a>
+
+    <div class="footer-root">
+      <span>DAMAK, PROVINCE NO. 1, NEPAL</span>
+      <span>ALL RIGHTS RESERVED © 2026 KHEM RAJ PRADHAN</span>
+      <span>EVOLUTION OVER DEGRADATION</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ── Custom Cursor ── */
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  document.addEventListener('mousemove', e => {
+    dot.style.left  = e.clientX + 'px';
+    dot.style.top   = e.clientY + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, .role-pill, .seeker-tag').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+  });
+
+  /* ── Header scroll state ── */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── Active nav link on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-links a[href^="#"]');
+  const OFFSET    = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--offset')) || 108;
+  const observer  = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, { rootMargin: `-${OFFSET}px 0px -60% 0px` });
+  sections.forEach(s => observer.observe(s));
+
+  /* ── Hamburger / Mobile nav ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── Scroll-reveal ── */
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+  /* ── Smooth scroll with header offset ── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySel
