@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url><loc>https://khemrajpradhan.com.np/index.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/about.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/services.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/blog.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/privacy.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/01_education_as_slavery.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/02_parents_unqualified.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/03_architecture_of_addiction.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/04_vastu_digital_era.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/05_chronomatic_timing.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/06_sawmill_lessons.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/07_regenerative_family_economies.html</loc></url>
-   <url><loc>https://khemrajpradhan.com.np/lab/posts/08_success_deconstruction.html</loc></url>
+  <url>
+    <loc>https://khemrajpradhan.com.np/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://khemrajpradhan.com.np/privacy-policy.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
