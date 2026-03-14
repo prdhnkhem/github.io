@@ -62,6 +62,7 @@
       --cream:#f9f6ef; --cream-2:#f2ede2;
       --ink:#1c1c1a; --ink-soft:#4a4a44; --ink-muted:#7a7a70;
       --white:#ffffff; --green:#27ae60;
+      --terracotta:#a42a28;
       --sp-sm:6px; --sp-md:10px; --sp-lg:16px; --sp-xl:26px;
       --sp-2xl:42px; --sp-3xl:68px; --sp-4xl:110px; --sp-5xl:178px;
       --ticker-h:38px; --header-h:70px; --offset:108px;
@@ -76,19 +77,28 @@
     ul{list-style:none;}
 
     /* ANIMATIONS */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes fadeRight{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
     @keyframes tickerRoll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
     @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     @keyframes floatHint{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
 
-    .reveal{animation:fadeUp 0.8s var(--ease-gold) both;}
-    .reveal-left{animation:fadeLeft 0.8s var(--ease-gold) both;}
-    .reveal-right{animation:fadeRight 0.8s var(--ease-gold) both;}
-    .delay-1{animation-delay:0.1s;} .delay-2{animation-delay:0.2s;}
-    .delay-3{animation-delay:0.3s;} .delay-4{animation-delay:0.4s;}
+    /* SCROLL REVEAL — IntersectionObserver driven */
+    .reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity 0.8s var(--ease-gold),transform 0.8s var(--ease-gold);}
+    .reveal{transform:translateY(28px);}
+    .reveal-left{transform:translateX(-28px);}
+    .reveal-right{transform:translateX(28px);}
+    .reveal.in-view,.reveal-left.in-view,.reveal-right.in-view{opacity:1;transform:translate(0);}
+    .delay-1{transition-delay:0.1s;} .delay-2{transition-delay:0.2s;}
+    .delay-3{transition-delay:0.3s;} .delay-4{transition-delay:0.4s;}
+
+    /* SCROLL PROGRESS BAR */
+    .scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--gold);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+
+    /* BACK TO TOP */
+    .back-to-top{position:fixed;bottom:var(--sp-3xl);left:var(--sp-2xl);z-index:8000;width:44px;height:44px;background:var(--obsidian);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:opacity 0.4s,transform 0.4s,border-color 0.3s;pointer-events:none;}
+    .back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+    .back-to-top:hover{border-color:var(--gold);background:var(--obsidian-3);}
+    .back-to-top svg{width:16px;height:16px;fill:var(--gold);}
 
     /* LAYOUT */
     .container{max-width:1100px;margin:0 auto;padding:0 var(--sp-2xl);}
@@ -136,17 +146,8 @@
     .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
     .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-    /* MOBILE NAV — uses display:flex toggled by JS */
-    .mobile-nav{
-      display:none;
-      position:fixed;top:var(--offset);left:0;width:100%;
-      height:calc(100vh - var(--offset));
-      background:rgba(249,246,239,0.99);
-      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-      z-index:1000;
-      flex-direction:column;align-items:center;justify-content:center;
-      gap:var(--sp-2xl);
-    }
+    /* MOBILE NAV */
+    .mobile-nav{display:none;position:fixed;top:var(--offset);left:0;width:100%;height:calc(100vh - var(--offset));background:rgba(249,246,239,0.99);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:1000;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-2xl);}
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:1.8rem;font-family:'Cormorant Garamond',serif;text-decoration:none;color:var(--ink);font-weight:600;transition:color 0.3s;}
     .mobile-nav a:hover{color:var(--gold);}
@@ -278,9 +279,27 @@
       :root{--sp-5xl:80px;--sp-4xl:52px;}
       .container{padding:0 var(--sp-lg);}
     }
+
+    /* PRINT */
+    @media print{
+      .ticker-bar,.scroll-progress,.wa-float,.back-to-top,header{display:none!important;}
+      body{background:#fff;color:#000;}
+      .hero-bg-grid,.hero-bg-radial{display:none;}
+      #vault{background:#f5f5f5!important;color:#000!important;}
+      #contact{background:#f5f5f5!important;color:#000!important;}
+      .services-note{background:#eee!important;color:#000!important;}
+    }
   </style>
 </head>
 <body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</button>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
@@ -588,71 +607,66 @@
         </div>
         <div class="movement-badge">Est. 2013 — Formerly "The Joon Project"</div>
         <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">The Hunate<br><em style="color:var(--gold);">Movement</em></h2>
-          <div class="movement-body body-md">
-            <p>The world we inherited is broken. Its education systems, economic models, political structures, and relationship with nature are all failing, not by accident, but by design.</p>
-
-            <p>The Hunate Movement exists to question that design, find what went wrong, and build something better.</p>
-
-            <p>We are not an NGO. Not a company. Not a political party. We are simply humans; researchers, builders, thinkers, farmers, engineers, healers, coming together without registration, without hierarchy, without agenda, to do what humans are supposed to do: learn the truth, share it freely, and build a life worth living.</p>
-
-            <p>Our three pillars are simple: <strong>Humans. Nature. Technology.</strong> In balance. In harmony. In the service of life, not profit.</p>
-
-            <p>We are in the early stages. The movement is growing quietly. If something in you recognises what we are saying, you already belong here.</p>        
+        <div class="movement-body body-md">
+          <p>The world we inherited is broken. Its education systems, economic models, political structures, and relationship with nature are all failing, not by accident, but by design.</p>
+          <p>The Hunate Movement exists to question that design, find what went wrong, and build something better.</p>
+          <p>We are not an NGO. Not a company. Not a political party. We are simply humans; researchers, builders, thinkers, farmers, engineers, healers, coming together without registration, without hierarchy, without agenda, to do what humans are supposed to do: learn the truth, share it freely, and build a life worth living.</p>
+          <p>Our three pillars are simple: <strong>Humans. Nature. Technology.</strong> In balance. In harmony. In the service of life, not profit.</p>
+          <p>We are in the early stages. The movement is growing quietly. If something in you recognises what we are saying, you already belong here.</p>
         </div>
       </div>
       <div class="reveal-right">
         <p class="label" style="margin-bottom:var(--sp-lg);">We are looking for:</p>
-<div class="seekers-grid">
+        <div class="seekers-grid">
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Thinkers & Guides</p>
-  <span class="seeker-tag">Free Thinkers</span>
-  <span class="seeker-tag">Visionaries</span>
-  <span class="seeker-tag">Lawyers</span>
-  <span class="seeker-tag">Social Engineers</span>
-  <span class="seeker-tag">Journalists</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Thinkers &amp; Guides</p>
+          <span class="seeker-tag">Free Thinkers</span>
+          <span class="seeker-tag">Visionaries</span>
+          <span class="seeker-tag">Lawyers</span>
+          <span class="seeker-tag">Social Engineers</span>
+          <span class="seeker-tag">Journalists</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Ancient & Natural Knowledge</p>
-  <span class="seeker-tag">Astrologers</span>
-  <span class="seeker-tag">Ayurveda Experts</span>
-  <span class="seeker-tag">Vastu Consultants</span>
-  <span class="seeker-tag">Yoga & Meditation Guides</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Ancient &amp; Natural Knowledge</p>
+          <span class="seeker-tag">Astrologers</span>
+          <span class="seeker-tag">Ayurveda Experts</span>
+          <span class="seeker-tag">Vastu Consultants</span>
+          <span class="seeker-tag">Yoga &amp; Meditation Guides</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Land & Food Systems</p>
-  <span class="seeker-tag">Permaculture Designers</span>
-  <span class="seeker-tag">Gardeners</span>
-  <span class="seeker-tag">Potters</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Land &amp; Food Systems</p>
+          <span class="seeker-tag">Permaculture Designers</span>
+          <span class="seeker-tag">Gardeners</span>
+          <span class="seeker-tag">Potters</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Design & Construction</p>
-  <span class="seeker-tag">Eco Architects</span>
-  <span class="seeker-tag">Civil Engineers</span>
-  <span class="seeker-tag">Carpenters</span>
-  <span class="seeker-tag">Builders</span>
-  <span class="seeker-tag">Plumbers</span>
-  <span class="seeker-tag">Welders</span>
-  <span class="seeker-tag">Ironsmiths</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Design &amp; Construction</p>
+          <span class="seeker-tag">Eco Architects</span>
+          <span class="seeker-tag">Civil Engineers</span>
+          <span class="seeker-tag">Carpenters</span>
+          <span class="seeker-tag">Builders</span>
+          <span class="seeker-tag">Plumbers</span>
+          <span class="seeker-tag">Welders</span>
+          <span class="seeker-tag">Ironsmiths</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Engineering & Technology</p>
-  <span class="seeker-tag">Renewable Energy Engineers</span>
-  <span class="seeker-tag">Computer Engineers</span>
-  <span class="seeker-tag">Mechanical Engineers</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Engineering &amp; Technology</p>
+          <span class="seeker-tag">Renewable Energy Engineers</span>
+          <span class="seeker-tag">Computer Engineers</span>
+          <span class="seeker-tag">Mechanical Engineers</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Community & Education</p>
-  <span class="seeker-tag">Teachers</span>
-  <span class="seeker-tag">Community Organisers</span>
-  <span class="seeker-tag">Artist</span>
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Community &amp; Education</p>
+          <span class="seeker-tag">Teachers</span>
+          <span class="seeker-tag">Community Organisers</span>
+          <span class="seeker-tag">Artist</span>
 
+          <p class="label" style="width:100%;margin-top:var(--sp-lg);margin-bottom:var(--sp-sm);">Media &amp; Communication</p>
+          <span class="seeker-tag">Cinematographers</span>
+          <span class="seeker-tag">Photographers</span>
+          <span class="seeker-tag">Writers</span>
+          <span class="seeker-tag">&amp; More</span>
 
-  <p class="label" style="width:100%; margin-top:var(--sp-lg); margin-bottom:var(--sp-sm);">Media & Communication</p>
-  <span class="seeker-tag">Cinematographers</span>
-  <span class="seeker-tag">Photographers</span>
-  <span class="seeker-tag">Writers</span>
-  <span class="seeker-tag">& More</span>
-
-</div>
-          <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="movement-join">
+        </div>
+        <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="movement-join">
           <svg class="wa-icon-sm" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           JOIN THE MOVEMENT — +977 9816860282
-        </a>        
+        </a>
       </div>
     </div>
   </div>
@@ -712,16 +726,42 @@
 </section>
 
 <script>
-  /* Header scroll */
+  var OFFSET = 108;
+
+  /* ── Scroll progress bar ── */
+  var progressBar = document.getElementById('scrollProgress');
+  function updateProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+
+  /* ── Header scroll state ── */
   var header = document.getElementById('site-header');
-  window.addEventListener('scroll', function() {
+  function updateHeader() {
     header.classList.toggle('scrolled', window.scrollY > 60);
+  }
+
+  /* ── Back to top ── */
+  var backToTop = document.getElementById('backToTop');
+  function updateBackToTop() {
+    backToTop.classList.toggle('visible', window.scrollY > 420);
+  }
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /* Active nav on scroll */
+  /* ── Combined scroll handler ── */
+  window.addEventListener('scroll', function() {
+    updateProgress();
+    updateHeader();
+    updateBackToTop();
+  }, { passive: true });
+
+  /* ── Active nav link on scroll ── */
   var sections = document.querySelectorAll('section[id]');
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  var OFFSET = 108;
   var navObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -733,10 +773,21 @@
   }, { rootMargin: '-108px 0px -60% 0px' });
   sections.forEach(function(s) { navObserver.observe(s); });
 
-  /* Hamburger menu */
+  /* ── Scroll reveal via IntersectionObserver ── */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+  /* ── Hamburger / Mobile nav ── */
   var hamburger = document.getElementById('hamburger');
   var mobileNav = document.getElementById('mobileNav');
-
   hamburger.addEventListener('click', function() {
     var isOpen = mobileNav.classList.contains('open');
     if (isOpen) {
@@ -751,7 +802,6 @@
       document.body.style.overflow = 'hidden';
     }
   });
-
   document.querySelectorAll('.mob-link').forEach(function(link) {
     link.addEventListener('click', function() {
       mobileNav.classList.remove('open');
@@ -761,7 +811,7 @@
     });
   });
 
-  /* Smooth scroll */
+  /* ── Smooth scroll with header offset ── */
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       var target = document.querySelector(this.getAttribute('href'));
