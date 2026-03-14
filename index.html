@@ -11,6 +11,8 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="canonical" href="https://khemrajpradhan.com.np/">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://khemrajpradhan.com.np/">
   <meta property="og:title" content="Khem Raj Pradhan | Life Companion & Systems Researcher">
@@ -18,18 +20,32 @@
   <meta property="og:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Khem Raj Pradhan — Life Companion & Systems Researcher, Damak Nepal">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Khem Raj Pradhan">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Khem Raj Pradhan | Life Companion & Systems Researcher">
   <meta name="twitter:description" content="Helping individuals and families unlearn the noise of the failing social system and discover a regenerative, natural path.">
   <meta name="twitter:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="Khem Raj Pradhan — Life Companion & Systems Researcher, Damak Nepal">
+
+  <!-- PWA / App -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Khem Raj Pradhan">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="application-name" content="Khem Raj Pradhan">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,9 +68,12 @@
     ]
   }
   </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <style>
     :root {
       --gold:#c9a84c; --gold-light:#e8c97a; --gold-dim:rgba(201,168,76,0.15);
@@ -81,8 +100,9 @@
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
     @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     @keyframes floatHint{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+    @keyframes ringRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
-    /* SCROLL REVEAL — IntersectionObserver driven */
+    /* SCROLL REVEAL */
     .reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity 0.8s var(--ease-gold),transform 0.8s var(--ease-gold);}
     .reveal{transform:translateY(28px);}
     .reveal-left{transform:translateX(-28px);}
@@ -94,11 +114,20 @@
     /* SCROLL PROGRESS BAR */
     .scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--gold);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
 
-    /* BACK TO TOP */
-    .back-to-top{position:fixed;bottom:var(--sp-3xl);left:var(--sp-2xl);z-index:8000;width:44px;height:44px;background:var(--obsidian);border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:opacity 0.4s,transform 0.4s,border-color 0.3s;pointer-events:none;}
+    /* BACK TO TOP — round arrow only */
+    .back-to-top{
+      position:fixed;bottom:var(--sp-3xl);left:var(--sp-2xl);z-index:8000;
+      width:44px;height:44px;border-radius:50%;
+      background:transparent;
+      border:1px solid rgba(201,168,76,0.5);
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;opacity:0;transform:translateY(12px);
+      transition:opacity 0.4s,transform 0.4s,border-color 0.3s,background 0.3s;
+      pointer-events:none;
+    }
     .back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
-    .back-to-top:hover{border-color:var(--gold);background:var(--obsidian-3);}
-    .back-to-top svg{width:16px;height:16px;fill:var(--gold);}
+    .back-to-top:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
+    .back-to-top svg{width:18px;height:18px;fill:var(--gold);}
 
     /* LAYOUT */
     .container{max-width:1100px;margin:0 auto;padding:0 var(--sp-2xl);}
@@ -175,7 +204,48 @@
     #about{background:var(--white);}
     .about-grid{display:grid;grid-template-columns:0.618fr 1fr;gap:var(--sp-4xl);align-items:start;}
     .about-img-wrap{position:sticky;top:calc(var(--offset) + var(--sp-3xl));}
-    .about-img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(0.3) contrast(1.05);}
+
+    /* PROFILE PHOTO RING ANIMATION */
+    .about-img-ring{
+      position:relative;
+      display:inline-block;
+      width:100%;
+    }
+    .about-img-ring::before{
+      content:'';
+      position:absolute;
+      inset:-6px;
+      border-radius:2px;
+      background:conic-gradient(
+        var(--gold) 0deg,
+        transparent 60deg,
+        transparent 120deg,
+        var(--gold-light) 180deg,
+        transparent 240deg,
+        transparent 300deg,
+        var(--gold) 360deg
+      );
+      animation:ringRotate 6s linear infinite;
+      z-index:0;
+    }
+    .about-img-ring::after{
+      content:'';
+      position:absolute;
+      inset:-3px;
+      background:var(--white);
+      border-radius:1px;
+      z-index:1;
+    }
+    .about-img{
+      position:relative;
+      z-index:2;
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      filter:grayscale(0.3) contrast(1.05);
+      display:block;
+    }
+
     .about-img-caption{margin-top:var(--sp-lg);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;color:var(--ink-muted);line-height:1.6;}
     .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#eee;border:1px solid #eee;margin-top:var(--sp-2xl);}
     .stat-item{background:var(--white);padding:var(--sp-lg);}
@@ -245,9 +315,24 @@
     #contact .headline-xl em{color:var(--gold);}
     .contact-sub{max-width:520px;margin:var(--sp-xl) auto var(--sp-4xl);opacity:0.65;font-size:1rem;}
     .social-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-lg);margin-bottom:var(--sp-4xl);}
-    .social-link{width:56px;height:56px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;transition:border-color 0.3s,background 0.3s,transform 0.3s;}
-    .social-link:hover{border-color:var(--gold);background:var(--gold-dim);transform:translateY(-3px);}
-    .social-link svg{width:22px;height:22px;fill:currentColor;}
+    .social-link{
+      width:56px;height:56px;
+      border:1px solid rgba(201,168,76,0.3);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold);text-decoration:none;
+      transition:border-color 0.3s,background 0.3s,transform 0.3s,color 0.3s;
+    }
+    .social-link svg{width:22px;height:22px;fill:currentColor;transition:fill 0.3s;}
+    .social-link:hover{transform:translateY(-3px);}
+
+    /* Brand color hover states */
+    .social-link.yt:hover{background:#FF0000;border-color:#FF0000;color:#fff;}
+    .social-link.tt:hover{background:#010101;border-color:#69C9D0;color:#fff;}
+    .social-link.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff;}
+    .social-link.ig:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:#d6249f;color:#fff;}
+    .social-link.li:hover{background:#0A66C2;border-color:#0A66C2;color:#fff;}
+    .social-link.xc:hover{background:#000000;border-color:#ffffff;color:#fff;}
+
     .direct-links{display:flex;flex-direction:column;align-items:center;gap:var(--sp-md);margin-bottom:var(--sp-3xl);}
     .direct-link{display:inline-flex;align-items:center;gap:var(--sp-md);font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--gold-light);text-decoration:none;transition:opacity 0.3s;letter-spacing:0.04em;}
     .direct-link:hover{opacity:0.65;text-decoration:underline;}
@@ -285,9 +370,18 @@
       .ticker-bar,.scroll-progress,.wa-float,.back-to-top,header{display:none!important;}
       body{background:#fff;color:#000;}
       .hero-bg-grid,.hero-bg-radial{display:none;}
+      .about-img-ring::before,.about-img-ring::after{display:none;}
       #vault{background:#f5f5f5!important;color:#000!important;}
       #contact{background:#f5f5f5!important;color:#000!important;}
       .services-note{background:#eee!important;color:#000!important;}
+    }
+
+    /* REDUCED MOTION */
+    @media(prefers-reduced-motion:reduce){
+      .about-img-ring::before{animation:none;}
+      .wa-float{animation:none;}
+      .ticker-track{animation:none;}
+      .reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:none;}
     }
   </style>
 </head>
@@ -302,7 +396,7 @@
 </button>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/9779840852582" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -326,7 +420,7 @@
         <li><a href="#vault">Vault</a></li>
         <li><a href="#movement">Movement</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-book">BOOK A CALL</a></li>
+        <li><a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener noreferrer" class="btn-book">BOOK A CALL</a></li>
       </ul>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -343,7 +437,7 @@
   <a href="#vault" class="mob-link">Vault</a>
   <a href="#movement" class="mob-link">Movement</a>
   <a href="#contact" class="mob-link">Contact</a>
-  <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-book" style="margin-top:16px;">BOOK A CALL</a>
+  <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:16px;">BOOK A CALL</a>
 </nav>
 
 <!-- ZONE 1 — HERO -->
@@ -359,7 +453,7 @@
     <p class="hero-sub reveal delay-2">Welcome. I have made this as simple as possible. It should take no more than 5 to 10 minutes to fully understand what this is about. Please keep patience and follow along. I am sure I can offer you what you need.</p>
     <div class="hero-actions reveal delay-3">
       <a href="#about" class="btn-primary">BEGIN THE JOURNEY</a>
-      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-secondary">INITIALIZE RESEARCH CALL →</a>
+      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener noreferrer" class="btn-secondary">INITIALIZE RESEARCH CALL →</a>
     </div>
   </div>
   <div class="hero-scroll-hint" aria-hidden="true">
@@ -373,7 +467,9 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal-left">
-        <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan — Systems Researcher & Life Companion, Damak Nepal" class="about-img" loading="lazy" width="420" height="560">
+        <div class="about-img-ring">
+          <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan — Systems Researcher & Life Companion, Damak Nepal" class="about-img" loading="eager" fetchpriority="high" width="420" height="560">
+        </div>
         <div class="about-img-caption">
           <p>Navigating the Middle Path</p>
           <p>KHEM RAJ PRADHAN</p>
@@ -419,7 +515,6 @@
       <p class="body-lg">Here is how I work, the services I provide, and how to hire me. Everything I provide is based on natural law and regenerative methods to bring back balance and harmony to your existence.</p>
     </div>
 
-    <!-- Roles -->
     <div class="roles-section reveal">
       <div style="text-align:center;margin-bottom:var(--sp-4xl);">
         <h3 class="headline-md">: YOU CAN HIRE ME AS</h3>
@@ -446,7 +541,6 @@
       </div>
     </div>
 
-    <!-- Services by category -->
     <div class="services-list-section">
 
       <div class="reveal" style="text-align:center;margin-bottom:var(--sp-4xl);">
@@ -455,7 +549,6 @@
         <p class="body-md" style="max-width:660px;margin:0 auto;">My work adapts to who you are and what you need. Below you will find exactly what I can offer, broken down by who I work with.</p>
       </div>
 
-      <!-- INDIVIDUALS -->
       <div class="svc-category reveal">
         <div class="svc-cat-header">
           <div class="svc-cat-tag">For Individuals</div>
@@ -475,7 +568,6 @@
         </div>
       </div>
 
-      <!-- FAMILIES -->
       <div class="svc-category reveal">
         <div class="svc-cat-header">
           <div class="svc-cat-tag">For Families</div>
@@ -490,7 +582,6 @@
         </div>
       </div>
 
-      <!-- BUSINESSES -->
       <div class="svc-category reveal">
         <div class="svc-cat-header">
           <div class="svc-cat-tag">For Businesses</div>
@@ -505,7 +596,6 @@
         </div>
       </div>
 
-      <!-- NON-PROFITS -->
       <div class="svc-category reveal">
         <div class="svc-cat-header">
           <div class="svc-cat-tag">For Non-Profits &amp; Social Movements</div>
@@ -573,7 +663,7 @@
       </div>
     </div>
     <div class="process-cta reveal">
-      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener" class="btn-primary">[ INITIALIZE RESEARCH CALL ]</a>
+      <a href="https://forms.gle/oUjcrJpiPMUnJNSy7" target="_blank" rel="noopener noreferrer" class="btn-primary">[ INITIALIZE RESEARCH CALL ]</a>
     </div>
   </div>
 </section>
@@ -663,7 +753,7 @@
           <span class="seeker-tag">&amp; More</span>
 
         </div>
-        <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="movement-join">
+        <a href="https://wa.me/9779816860282" target="_blank" rel="noopener noreferrer" class="movement-join">
           <svg class="wa-icon-sm" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           JOIN THE MOVEMENT — +977 9816860282
         </a>
@@ -684,22 +774,22 @@
     <p class="contact-sub reveal delay-1">If you feel the friction in your life or business, do not wait. Reach out. I am here as a friend and a guide.</p>
 
     <div class="social-grid reveal delay-2">
-      <a href="https://www.youtube.com/@khemrajpradhan-com-np" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+      <a href="https://www.youtube.com/@khemrajpradhan-com-np" target="_blank" rel="noopener noreferrer" class="social-link yt" aria-label="YouTube">
         <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@khemrajpradhan.com.np" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+      <a href="https://www.tiktok.com/@khemrajpradhan.com.np" target="_blank" rel="noopener noreferrer" class="social-link tt" aria-label="TikTok">
         <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
       </a>
-      <a href="https://www.facebook.com/khemrajpradhan.com.np" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+      <a href="https://www.facebook.com/khemrajpradhan.com.np" target="_blank" rel="noopener noreferrer" class="social-link fb" aria-label="Facebook">
         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       </a>
-      <a href="https://www.instagram.com/khemrajpradhan.com.np/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+      <a href="https://www.instagram.com/khemrajpradhan.com.np/" target="_blank" rel="noopener noreferrer" class="social-link ig" aria-label="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
-      <a href="https://www.linkedin.com/in/khemrajpradhan-com-np/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/khemrajpradhan-com-np/" target="_blank" rel="noopener noreferrer" class="social-link li" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       </a>
-      <a href="https://x.com/khemrajpradhan_" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+      <a href="https://x.com/khemrajpradhan_" target="_blank" rel="noopener noreferrer" class="social-link xc" aria-label="X (Twitter)">
         <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
       </a>
     </div>
@@ -709,7 +799,7 @@
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         email@khemrajpradhan.com.np
       </a>
-      <a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="direct-link">
+      <a href="https://wa.me/9779840852582" target="_blank" rel="noopener noreferrer" class="direct-link">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         +977 9840852582
       </a>
@@ -726,6 +816,9 @@
 </section>
 
 <script>
+(function() {
+  'use strict';
+
   var OFFSET = 108;
 
   /* ── Scroll progress bar ── */
@@ -821,6 +914,8 @@
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
+
+})();
 </script>
 </body>
 </html>
