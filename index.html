@@ -10,7 +10,15 @@
   <meta name="author" content="Khem Raj Pradhan">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0a">
+  <meta name="application-name" content="Khem Raj Pradhan">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="canonical" href="https://khemrajpradhan.com.np/">
+
+  <!-- Geo meta tags for local SEO -->
+  <meta name="geo.region" content="NP-1">
+  <meta name="geo.placename" content="Damak, Jhapa, Nepal">
+  <meta name="geo.position" content="26.6580;87.6964">
+  <meta name="ICBM" content="26.6580, 87.6964">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -35,14 +43,14 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Khem Raj Pradhan">
-  <meta name="application-name" content="Khem Raj Pradhan">
-  <meta name="mobile-web-app-capable" content="yes">
 
-  <!-- Favicons -->
+  <!-- Favicons & App Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <!-- Android app icon: upload assets/img/icon-192.png to your repo (192x192px) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
   <link rel="manifest" href="manifest.json">
 
   <!-- Structured Data -->
@@ -55,7 +63,7 @@
     "image": "https://khemrajpradhan.com.np/assets/img/khem_raj_pradhan.webp",
     "jobTitle": "Life Companion & Systems Researcher",
     "description": "Independent life companion, systems researcher, and regenerative living guide based in Damak, Nepal.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Damak", "addressCountry": "NP" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Damak", "addressRegion": "Province No. 1", "addressCountry": "NP" },
     "email": "email@khemrajpradhan.com.np",
     "telephone": "+977-9840852582",
     "sameAs": [
@@ -100,7 +108,6 @@
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
     @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     @keyframes floatHint{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-    @keyframes ringRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
     /* SCROLL REVEAL */
     .reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity 0.8s var(--ease-gold),transform 0.8s var(--ease-gold);}
@@ -114,17 +121,8 @@
     /* SCROLL PROGRESS BAR */
     .scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--gold);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
 
-    /* BACK TO TOP — round arrow only */
-    .back-to-top{
-      position:fixed;bottom:var(--sp-3xl);left:var(--sp-2xl);z-index:8000;
-      width:44px;height:44px;border-radius:50%;
-      background:transparent;
-      border:1px solid rgba(201,168,76,0.5);
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;opacity:0;transform:translateY(12px);
-      transition:opacity 0.4s,transform 0.4s,border-color 0.3s,background 0.3s;
-      pointer-events:none;
-    }
+    /* BACK TO TOP — round transparent */
+    .back-to-top{position:fixed;bottom:var(--sp-3xl);left:var(--sp-2xl);z-index:8000;width:44px;height:44px;border-radius:50%;background:transparent;border:1px solid rgba(201,168,76,0.5);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(12px);transition:opacity 0.4s,transform 0.4s,border-color 0.3s,background 0.3s;pointer-events:none;}
     .back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
     .back-to-top:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
     .back-to-top svg{width:18px;height:18px;fill:var(--gold);}
@@ -140,10 +138,14 @@
     .headline-md{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:600;}
     .body-lg{font-size:1.125rem;line-height:1.9;color:var(--ink-soft);}
     .body-md{font-size:1rem;line-height:1.85;color:var(--ink-soft);}
+    .gold-em{color:var(--gold);font-style:italic;}
     .gold-divider{width:42px;height:2px;background:var(--gold);margin:var(--sp-xl) 0;}
     .gold-divider.center{margin:var(--sp-xl) auto;}
     .section-label-row{display:flex;align-items:center;gap:var(--sp-lg);margin-bottom:var(--sp-2xl);}
     .section-label-line{flex:1;height:1px;background:linear-gradient(to right,rgba(201,168,76,0.4),transparent);}
+
+    /* ZONE LABEL — subtle, intentional */
+    .zone-label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.45);margin-bottom:var(--sp-xl);}
 
     /* TICKER */
     .ticker-bar{position:fixed;top:0;width:100%;z-index:1002;background:var(--obsidian);height:var(--ticker-h);border-bottom:1px solid rgba(201,168,76,0.3);overflow:hidden;display:flex;align-items:center;}
@@ -205,45 +207,14 @@
     .about-grid{display:grid;grid-template-columns:0.618fr 1fr;gap:var(--sp-4xl);align-items:start;}
     .about-img-wrap{position:sticky;top:calc(var(--offset) + var(--sp-3xl));}
 
-    /* PROFILE PHOTO RING ANIMATION */
-    .about-img-ring{
-      position:relative;
-      display:inline-block;
-      width:100%;
-    }
-    .about-img-ring::before{
-      content:'';
-      position:absolute;
-      inset:-6px;
-      border-radius:2px;
-      background:conic-gradient(
-        var(--gold) 0deg,
-        transparent 60deg,
-        transparent 120deg,
-        var(--gold-light) 180deg,
-        transparent 240deg,
-        transparent 300deg,
-        var(--gold) 360deg
-      );
-      animation:ringRotate 6s linear infinite;
-      z-index:0;
-    }
-    .about-img-ring::after{
-      content:'';
-      position:absolute;
-      inset:-3px;
-      background:var(--white);
-      border-radius:1px;
-      z-index:1;
-    }
+    /* PROFILE PHOTO — clean gold border */
     .about-img{
-      position:relative;
-      z-index:2;
-      width:100%;
-      aspect-ratio:3/4;
-      object-fit:cover;
+      width:100%;aspect-ratio:3/4;object-fit:cover;
       filter:grayscale(0.3) contrast(1.05);
       display:block;
+      border:2px solid var(--gold);
+      outline:6px solid var(--cream);
+      outline-offset:-8px;
     }
 
     .about-img-caption{margin-top:var(--sp-lg);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;color:var(--ink-muted);line-height:1.6;}
@@ -251,8 +222,16 @@
     .stat-item{background:var(--white);padding:var(--sp-lg);}
     .stat-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
     .stat-val{font-size:0.82rem;color:var(--ink);line-height:1.4;}
+
+    /* READ MORE collapse */
     .about-body p{margin-bottom:var(--sp-xl);}
     .about-body p:first-of-type::first-letter{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:600;line-height:0.8;float:left;margin:4px 12px 0 0;color:var(--gold);}
+    .read-more-content{overflow:hidden;max-height:0;transition:max-height 0.6s var(--ease-gold);}
+    .read-more-content.open{max-height:1000px;}
+    .read-more-btn{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:none;border:none;border-bottom:1px solid rgba(201,168,76,0.4);cursor:pointer;padding-bottom:2px;margin-top:var(--sp-md);transition:opacity 0.3s;}
+    .read-more-btn:hover{opacity:0.7;}
+    .read-more-btn .arrow{display:inline-block;transition:transform 0.3s;}
+    .read-more-btn.open .arrow{transform:rotate(180deg);}
 
     /* SERVICES */
     #services{background:var(--cream-2);}
@@ -294,8 +273,9 @@
     #vault .label{color:var(--gold);}
     .vault-header{text-align:center;margin-bottom:var(--sp-4xl);}
     .vault-header .headline-lg{color:var(--white);}
-    .termination-box{border:1px solid rgba(192,57,43,0.5);background:rgba(192,57,43,0.07);padding:var(--sp-2xl) var(--sp-3xl);margin-bottom:var(--sp-3xl);text-align:center;}
-    .termination-box p{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.08em;color:rgba(255,100,100,0.9);line-height:1.8;}
+    .termination-box{border:1px solid rgba(201,168,76,0.25);background:rgba(201,168,76,0.04);padding:var(--sp-2xl) var(--sp-3xl);margin-bottom:var(--sp-3xl);}
+    .termination-box p{font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.7);}
+    .termination-box strong{color:var(--gold-light);}
 
     /* MOVEMENT */
     #movement{background:var(--cream-2);}
@@ -315,24 +295,15 @@
     #contact .headline-xl em{color:var(--gold);}
     .contact-sub{max-width:520px;margin:var(--sp-xl) auto var(--sp-4xl);opacity:0.65;font-size:1rem;}
     .social-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-lg);margin-bottom:var(--sp-4xl);}
-    .social-link{
-      width:56px;height:56px;
-      border:1px solid rgba(201,168,76,0.3);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--gold);text-decoration:none;
-      transition:border-color 0.3s,background 0.3s,transform 0.3s,color 0.3s;
-    }
+    .social-link{width:56px;height:56px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;transition:border-color 0.3s,background 0.3s,transform 0.3s,color 0.3s;}
     .social-link svg{width:22px;height:22px;fill:currentColor;transition:fill 0.3s;}
     .social-link:hover{transform:translateY(-3px);}
-
-    /* Brand color hover states */
     .social-link.yt:hover{background:#FF0000;border-color:#FF0000;color:#fff;}
     .social-link.tt:hover{background:#010101;border-color:#69C9D0;color:#fff;}
     .social-link.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff;}
     .social-link.ig:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:#d6249f;color:#fff;}
     .social-link.li:hover{background:#0A66C2;border-color:#0A66C2;color:#fff;}
     .social-link.xc:hover{background:#000000;border-color:#ffffff;color:#fff;}
-
     .direct-links{display:flex;flex-direction:column;align-items:center;gap:var(--sp-md);margin-bottom:var(--sp-3xl);}
     .direct-link{display:inline-flex;align-items:center;gap:var(--sp-md);font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--gold-light);text-decoration:none;transition:opacity 0.3s;letter-spacing:0.04em;}
     .direct-link:hover{opacity:0.65;text-decoration:underline;}
@@ -370,18 +341,18 @@
       .ticker-bar,.scroll-progress,.wa-float,.back-to-top,header{display:none!important;}
       body{background:#fff;color:#000;}
       .hero-bg-grid,.hero-bg-radial{display:none;}
-      .about-img-ring::before,.about-img-ring::after{display:none;}
       #vault{background:#f5f5f5!important;color:#000!important;}
       #contact{background:#f5f5f5!important;color:#000!important;}
       .services-note{background:#eee!important;color:#000!important;}
+      .read-more-content{max-height:none!important;}
     }
 
     /* REDUCED MOTION */
     @media(prefers-reduced-motion:reduce){
-      .about-img-ring::before{animation:none;}
       .wa-float{animation:none;}
       .ticker-track{animation:none;}
       .reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:none;}
+      .read-more-content{transition:none;}
     }
   </style>
 </head>
@@ -403,8 +374,8 @@
 <!-- TICKER -->
 <div class="ticker-bar" role="marquee" aria-label="Site status">
   <div class="ticker-track">
-    <div class="ticker-inner"><span class="status-dot"></span>SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; ACCEPTING 3 NEW SEEKERS FOR MARCH &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;</div>
-    <div class="ticker-inner" aria-hidden="true"><span class="status-dot"></span>SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; ACCEPTING 3 NEW SEEKERS FOR MARCH &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;</div>
+    <div class="ticker-inner"><span class="status-dot"></span>SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; NOW ACCEPTING NEW SEEKERS &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;</div>
+    <div class="ticker-inner" aria-hidden="true"><span class="status-dot"></span>SYSTEM STATUS: <span class="gold">ACTIVE</span> &nbsp;•&nbsp; NOW ACCEPTING NEW SEEKERS &nbsp;•&nbsp; ROOT COORDINATE: DAMAK, NEPAL &nbsp;•&nbsp; EVOLUTION OVER DEGRADATION &nbsp;•&nbsp; THE HUNATE MOVEMENT IS GROWING &nbsp;•&nbsp; NATURAL LAW · REGENERATIVE METHODS · FUTURE OF HUMANITY &nbsp;•&nbsp;</div>
   </div>
 </div>
 
@@ -467,9 +438,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal-left">
-        <div class="about-img-ring">
-          <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan — Systems Researcher & Life Companion, Damak Nepal" class="about-img" loading="eager" fetchpriority="high" width="420" height="560">
-        </div>
+        <img src="assets/img/khem_raj_pradhan.webp" alt="Khem Raj Pradhan — Systems Researcher & Life Companion, Damak Nepal" class="about-img" loading="eager" fetchpriority="high" width="420" height="560">
         <div class="about-img-caption">
           <p>Navigating the Middle Path</p>
           <p>KHEM RAJ PRADHAN</p>
@@ -483,17 +452,20 @@
         </div>
       </div>
       <div class="reveal-right">
-        <div class="section-label-row">
-          <span class="label">Zone 02 — The Journey</span>
-          <div class="section-label-line"></div>
-        </div>
-        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);"><em style="color:var(--gold);">:: A Companion for Your Life Journey</em></h2>
+        <div class="zone-label">Zone 02 — The Journey</div>
+        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">A Companion for Your <em class="gold-em">Life Journey</em></h2>
         <div class="about-body body-md">
           <p>The world we live in is loud, confusing, and manipulative because most of its systems are built for profit and control, not for the unity and evolution of people. I call it a <strong>"Failing Social System."</strong> And most of us are too busy surviving it to notice where it is breaking us.</p>
-          <p>I am Khem Raj Pradhan, from a small village in the hills of Nepal. My life has been a research project into what it means to be human, moving through doubt, loss, and darkness, and finding my way back to purpose, balance, and clarity. Not once, but many times.</p>
-          <p>From an early age, I chose a different path. I left behind the implanted desires, found my own books and teachers, travelled, broke rules, lived among different communities, and worked across many fields and cultures. I learned life the inconvenient way, and now I want to share what I found.</p>
-          <p>I offer my time, experience, and hand as a companion to those ready to step away from the noise and build a simpler, more natural life.</p>
-          <p>My goal is simple: <strong>Evolution over Degradation.</strong> Whatever you are facing in your life, your body, or your work, I want to work through it with you, as a friend, find the root cause, and help you move forward. You don't have to do it alone.</p>
+          <p>I am Khem Raj Pradhan, from a small village in the hills of Nepal.</p>
+          <div class="read-more-content" id="aboutMore">
+            <p>My life has been a research project into what it means to be human, moving through doubt, loss, and darkness, and finding my way back to purpose, balance, and clarity. Not once, but many times.</p>
+            <p>From an early age, I chose a different path. I left behind the implanted desires, found my own books and teachers, travelled, broke rules, lived among different communities, and worked across many fields and cultures. I learned life the inconvenient way, and now I want to share what I found.</p>
+            <p>I offer my time, experience, and hand as a companion to those ready to step away from the noise and build a simpler, more natural life.</p>
+            <p>My goal is simple: <strong>Evolution over Degradation.</strong> Whatever you are facing in your life, your body, or your work, I want to work through it with you, as a friend, find the root cause, and help you move forward. You don't have to do it alone.</p>
+          </div>
+          <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="aboutMore">
+            Read more <span class="arrow">↓</span>
+          </button>
         </div>
       </div>
     </div>
@@ -505,19 +477,15 @@
   <div class="container">
 
     <div class="services-header reveal">
-      <div class="section-label-row" style="justify-content:center;">
-        <div class="section-label-line" style="max-width:80px;"></div>
-        <span class="label">Zone 03 — The Architecture</span>
-        <div class="section-label-line" style="max-width:80px;background:linear-gradient(to left,rgba(201,168,76,0.4),transparent);"></div>
-      </div>
-      <h2 class="headline-lg" style="margin:var(--sp-lg) 0;">:: HOW I CAN HELP</h2>
+      <div class="zone-label" style="text-align:center;">Zone 03 — The Architecture</div>
+      <h2 class="headline-lg" style="margin:var(--sp-lg) 0;">How I Can <em class="gold-em">Help You</em></h2>
       <div class="gold-divider center"></div>
       <p class="body-lg">Here is how I work, the services I provide, and how to hire me. Everything I provide is based on natural law and regenerative methods to bring back balance and harmony to your existence.</p>
     </div>
 
     <div class="roles-section reveal">
       <div style="text-align:center;margin-bottom:var(--sp-4xl);">
-        <h3 class="headline-md">: YOU CAN HIRE ME AS</h3>
+        <h3 class="headline-md">You Can <em class="gold-em">Hire Me</em> As</h3>
         <div class="gold-divider center"></div>
         <div class="roles-grid">
           <div class="role-pill">Friend</div>
@@ -544,7 +512,7 @@
     <div class="services-list-section">
 
       <div class="reveal" style="text-align:center;margin-bottom:var(--sp-4xl);">
-        <h3 class="headline-md">: HELP I CAN PROVIDE</h3>
+        <h3 class="headline-md"><em class="gold-em">Help</em> I Can Provide</h3>
         <div class="gold-divider center"></div>
         <p class="body-md" style="max-width:660px;margin:0 auto;">My work adapts to who you are and what you need. Below you will find exactly what I can offer, broken down by who I work with.</p>
       </div>
@@ -623,12 +591,8 @@
 <section id="process" class="section-pad">
   <div class="container">
     <div class="process-intro reveal">
-      <div class="section-label-row" style="justify-content:center;">
-        <div class="section-label-line" style="max-width:80px;"></div>
-        <span class="label">Zone 03b — The Process</span>
-        <div class="section-label-line" style="max-width:80px;background:linear-gradient(to left,rgba(201,168,76,0.4),transparent);"></div>
-      </div>
-      <h2 class="headline-lg" style="margin:var(--sp-lg) 0;">How Does the Process Work?</h2>
+      <div class="zone-label">Zone 03b — The Process</div>
+      <h2 class="headline-lg" style="margin:var(--sp-lg) 0;">How Does the <em class="gold-em">Process</em> Work?</h2>
       <div class="gold-divider center"></div>
       <p class="body-md">Four phases. One clear path toward truth and transformation.</p>
     </div>
@@ -672,16 +636,12 @@
 <section id="vault" class="section-pad">
   <div class="container">
     <div class="vault-header reveal">
-      <div class="section-label-row" style="justify-content:center;">
-        <div class="section-label-line" style="max-width:80px;background:linear-gradient(to right,rgba(201,168,76,0.4),transparent);"></div>
-        <span class="label">Zone 04 — The Vault</span>
-        <div class="section-label-line" style="max-width:80px;background:linear-gradient(to left,rgba(201,168,76,0.4),transparent);"></div>
-      </div>
-      <h2 class="headline-lg" style="color:var(--white);margin:var(--sp-lg) 0;">Ethics, Terms &amp; How I Work</h2>
+      <div class="zone-label" style="color:rgba(201,168,76,0.45);">Zone 04 — The Vault</div>
+      <h2 class="headline-lg" style="color:var(--white);margin:var(--sp-lg) 0;"><em class="gold-em">Ethics,</em> Terms &amp; How I Work</h2>
       <div class="gold-divider center"></div>
     </div>
     <div class="termination-box reveal">
-      <p>⚠ TERMINATION CLAUSE: THE WORK WILL BE TERMINATED IF YOU DO NOT FOLLOW MORE THAN 3 PIECES OF ADVICE, TIPS, FIXES, AND HABIT CHANGES — AND WILL NOT BE REFUNDED.</p>
+      <p><strong>A note on commitment.</strong> This work requires genuine effort from both sides. If you choose not to follow more than three of the agreed recommendations — whether advice, habit changes, or practical adjustments — the engagement will need to end. This is not a punishment; it is a boundary that protects both your time and mine. <strong>Fees are non-refundable once the work has begun.</strong> I ask only that you come with an open mind and a real intention to change.</p>
     </div>
   </div>
 </section>
@@ -691,12 +651,9 @@
   <div class="container">
     <div class="movement-grid">
       <div class="reveal-left">
-        <div class="section-label-row">
-          <span class="label">Zone 05 — The Movement</span>
-          <div class="section-label-line"></div>
-        </div>
+        <div class="zone-label">Zone 05 — The Movement</div>
         <div class="movement-badge">Est. 2013 — Formerly "The Joon Project"</div>
-        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">The Hunate<br><em style="color:var(--gold);">Movement</em></h2>
+        <h2 class="headline-lg" style="margin-bottom:var(--sp-2xl);">The <em class="gold-em">Hunate</em><br>Movement</h2>
         <div class="movement-body body-md">
           <p>The world we inherited is broken. Its education systems, economic models, political structures, and relationship with nature are all failing, not by accident, but by design.</p>
           <p>The Hunate Movement exists to question that design, find what went wrong, and build something better.</p>
@@ -765,10 +722,8 @@
 <!-- ZONE 6 — CONTACT -->
 <section id="contact" class="section-pad">
   <div class="container">
-    <div class="section-label-row" style="justify-content:center;">
-      <div class="section-label-line" style="max-width:80px;background:linear-gradient(to right,rgba(201,168,76,0.3),transparent);"></div>
-      <span class="label">Zone 06 — The Terminal</span>
-      <div class="section-label-line" style="max-width:80px;background:linear-gradient(to left,rgba(201,168,76,0.3),transparent);"></div>
+    <div style="justify-content:center;display:flex;margin-bottom:var(--sp-lg);">
+      <span class="zone-label" style="color:rgba(201,168,76,0.35);">Zone 06 — The Terminal</span>
     </div>
     <h2 class="headline-xl reveal" style="margin:var(--sp-xl) 0;">Connect with <em>Khem?</em></h2>
     <p class="contact-sub reveal delay-1">If you feel the friction in your life or business, do not wait. Reach out. I am here as a friend and a guide.</p>
@@ -903,6 +858,21 @@
       document.body.style.overflow = '';
     });
   });
+
+  /* ── Read more toggle ── */
+  var readMoreBtn = document.getElementById('readMoreBtn');
+  var aboutMore = document.getElementById('aboutMore');
+  if (readMoreBtn && aboutMore) {
+    readMoreBtn.addEventListener('click', function() {
+      var isOpen = aboutMore.classList.contains('open');
+      aboutMore.classList.toggle('open', !isOpen);
+      readMoreBtn.classList.toggle('open', !isOpen);
+      readMoreBtn.setAttribute('aria-expanded', !isOpen);
+      readMoreBtn.innerHTML = !isOpen
+        ? 'Read less <span class="arrow">↑</span>'
+        : 'Read more <span class="arrow">↓</span>';
+    });
+  }
 
   /* ── Smooth scroll with header offset ── */
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
