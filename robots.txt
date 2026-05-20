@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /lab/posts/
 
 Sitemap: https://khemrajpradhan.com.np/sitemap.xml
-
