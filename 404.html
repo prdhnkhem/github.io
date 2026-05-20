@@ -3,91 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found | Khem Raj Pradhan</title>
+  <title>Page Not Found — Khem Raj Pradhan</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F5F0E8">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #c9a84c;
-      --obsidian: #080807;
-      --cream: #f9f6ef;
-      --ink: #1c1c1a;
-      --ink-soft: #4a4a44;
-      --ink-muted: #7a7a70;
+      --cream: #F5F0E8;
+      --obsidian: #0D0D0B;
+      --gold: #C9A84C;
+      --terracotta: #A42A28;
+      --ash: #6B6B60;
+      --ink-soft: #4A4A44;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       font-family: 'Outfit', sans-serif;
-      background: var(--obsidian);
-      color: var(--cream);
+      background: var(--cream);
+      color: var(--obsidian);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 560px; }
-    .code {
-      font-family: 'JetBrains Mono', monospace;
+    .wrap { max-width: 580px; }
+    .label {
+      font-family: 'Outfit', sans-serif;
       font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       color: var(--gold);
-      margin-bottom: 32px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 28px;
     }
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 15vw, 9rem);
+      font-size: clamp(4.5rem, 16vw, 9rem);
       font-weight: 600;
-      line-height: 1;
-      color: var(--cream);
-      margin-bottom: 8px;
+      line-height: 0.95;
+      color: var(--obsidian);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
-    h1 em { color: var(--gold); font-style: italic; }
+    h1 em { color: var(--gold); font-style: italic; font-weight: 500; }
     .subtitle {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 600;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 32px;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: var(--ash);
+      margin-bottom: 28px;
     }
-    p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 48px;
-    }
-    .btn {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      background: var(--gold);
-      color: var(--obsidian);
-      padding: 16px 32px;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .btn:hover { opacity: 0.85; transform: translateY(-2px); }
     .divider {
       width: 42px;
       height: 2px;
       background: var(--gold);
       margin: 0 auto 32px;
     }
+    p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin-bottom: 48px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: var(--obsidian);
+      color: var(--cream);
+      padding: 16px 32px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      background: var(--terracotta);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    }
+    .quiet {
+      margin-top: 32px;
+      font-size: 0.82rem;
+      color: var(--ash);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <p class="code">:: ERROR 404 ::</p>
-    <h1>Lost in <em>the System</em></h1>
+    <p class="label">Page Not Found</p>
+    <h1>4<em>0</em>4</h1>
+    <p class="subtitle">Lost in the journey</p>
     <div class="divider"></div>
-    <p class="subtitle">Page Not Found</p>
     <p>The page you are looking for does not exist or has been moved. This happens sometimes. What matters is finding your way back.</p>
     <a href="/" class="btn">Return to Home</a>
+    <p class="quiet">Damak, Nepal &nbsp;·&nbsp; Khem Raj Pradhan</p>
   </div>
 </body>
 </html>
