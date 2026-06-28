@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunate Movement | Humanity, Nature, Technology in Balance — Nepal</title>
+<meta name="description" content="The Hunate Movement is a citizen led research and regenerative living movement in Nepal, restoring balance between Humanity, Nature, and Technology. Ancient wisdom for a regenerative future.">
+<meta name="theme-color" content="#161513">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hunate Movement | Ancient Wisdom for a Regenerative Future">
+<meta property="og:description" content="A citizen led movement in Nepal restoring balance between Humanity, Nature, and Technology.">
+<meta property="og:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+body.hunate{
+  --prana:#A42A28; --prana-soft:rgba(164,42,40,.16);
+  --shunya:#161513; --shunya-2:#201E1B;
+  --clay:#D8C3A5; --stone:#8E8D8A; --sand:#EAE7DC;
+  --akasha:#6E9AAB; --akasha-deep:#4A6D7C;
+  --accent:var(--prana);
+  background:var(--shunya); color:var(--sand);
+  font-family:'Merriweather',serif;
+}
+body.hunate h1,body.hunate h2,body.hunate h3,body.hunate h4{font-family:'Montserrat',sans-serif;color:var(--sand);font-weight:700;letter-spacing:-.01em}
+body.hunate .eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.24em;color:var(--prana)}
+body.hunate .brand{font-family:'Montserrat',sans-serif;color:var(--sand);font-weight:700}
+body.hunate .brand em{color:var(--prana);font-style:normal}
+
+/* dark header + subnav */
+body.hunate header{background:rgba(22,21,19,.7)}
+body.hunate header.scrolled{background:rgba(22,21,19,.96);border-color:rgba(234,231,220,.08);box-shadow:0 4px 24px rgba(0,0,0,.4)}
+body.hunate .menu a{color:var(--clay);font-family:'Montserrat',sans-serif;font-size:.86rem}
+body.hunate .menu a:hover,body.hunate .menu a.here{color:var(--sand)}
+body.hunate .menu a::after,body.hunate .menu a.here::after{background:var(--prana)}
+body.hunate .menu a.cta{background:var(--prana);color:var(--sand)}
+body.hunate .menu a.cta:hover{background:var(--akasha-deep)}
+body.hunate .burger span{background:var(--sand)}
+body.hunate .mobile{background:rgba(22,21,19,.98)}
+body.hunate .mobile a{color:var(--sand);font-family:'Montserrat',sans-serif}
+body.hunate .mobile a.cta{background:var(--prana)}
+body.hunate .subnav{background:rgba(22,21,19,.92);border-bottom:1px solid rgba(234,231,220,.08)}
+body.hunate .subnav a{color:var(--stone);font-family:'Montserrat',sans-serif;font-size:.8rem}
+body.hunate .subnav a:hover{color:var(--sand)}
+body.hunate .subnav a.on{color:var(--prana)}
+body.hunate .subnav .nav-label{color:var(--prana);font-family:'Montserrat',sans-serif}
+body.hunate .bar{background:var(--prana)}
+
+/* buttons */
+body.hunate .btn{background:var(--prana);color:var(--sand);font-family:'Montserrat',sans-serif;font-weight:600}
+body.hunate .btn:hover{background:var(--akasha-deep)}
+.btn-akasha{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.92rem;color:var(--sand);border:1px solid var(--akasha);padding:14px 28px;transition:.3s}
+.btn-akasha:hover{background:var(--akasha);color:var(--shunya)}
+
+/* hero */
+.hhero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hhero-bg{position:absolute;inset:0;background:url('../assets/img/hunate/hunate-hero.webp') center/cover;transform:scale(1.06)}
+.hhero-veil{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 46%,rgba(22,21,19,.45),rgba(22,21,19,.86) 80%),linear-gradient(rgba(22,21,19,.5),rgba(22,21,19,.7))}
+.hhero-inner{position:relative;z-index:2;padding:90px 20px 60px;max-width:840px}
+.hmark{width:104px;height:104px;color:var(--sand);margin:0 auto 22px}
+.hmark svg{width:100%;height:100%;display:block;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5))}
+.hword{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:.32em;color:var(--sand);margin:0 0 6px;padding-left:.32em}
+.hsplit{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.34em;color:var(--clay);margin-bottom:26px}
+.hsplit b{color:var(--prana);font-weight:700}
+.hhero h1{font-family:'Montserrat',sans-serif;font-style:normal;font-weight:500;font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--sand);line-height:1.3;margin-bottom:22px}
+.hhero p{max-width:580px;margin:0 auto 32px;color:var(--clay);font-size:1.02rem;line-height:1.9}
+.hhero-cta{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.hscroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:9px;opacity:.7}
+.hscroll span{font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay)}
+.hscroll i{width:1px;height:42px;background:linear-gradient(var(--prana),transparent)}
+
+/* sections */
+.hband{padding:108px 0}
+.hband.alt{background:var(--shunya-2)}
+.hhead{max-width:720px;margin:0 auto 50px;text-align:center}
+.hhead h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-top:12px}
+.hhead p{color:var(--clay);margin-top:14px;line-height:1.9}
+.prana-rule{width:48px;height:3px;background:var(--prana);margin:0 auto 0}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
+.pillar{text-align:center;padding:34px 24px;border:1px solid rgba(234,231,220,.1);background:rgba(234,231,220,.02);transition:.3s}
+.pillar:hover{border-color:var(--prana);background:rgba(164,42,40,.06)}
+.pillar .pk{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.5rem;color:var(--sand)}
+.pillar .pk b{color:var(--prana)}
+.pillar .pd{color:var(--clay);font-size:.92rem;margin-top:10px;line-height:1.8}
+.idea-lead{max-width:780px;margin:0 auto 10px;text-align:center}
+.idea-lead p{color:var(--sand);font-size:1.12rem;line-height:1.95;margin-bottom:20px}
+.idea-lead p strong{color:var(--prana)}
+.notwe{text-align:center;font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:.04em;color:var(--stone);margin-top:34px;font-size:.95rem}
+.notwe b{color:var(--sand)}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(.15) contrast(1.05);border:1px solid rgba(234,231,220,.12)}
+.story-grid h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:18px}
+.story-grid p{color:var(--clay);margin-bottom:16px;line-height:1.95}
+.story-grid p strong{color:var(--sand)}
+
+/* works gallery */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.work{position:relative;aspect-ratio:1;overflow:hidden}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);filter:grayscale(.1)}
+.work:hover img{transform:scale(1.07)}
+.work-cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(to top,rgba(22,21,19,.88),transparent 60%)}
+.work-cap b{font-family:'Montserrat',sans-serif;font-weight:600;font-size:1rem;color:var(--sand)}
+.work-cap span{font-size:.82rem;color:var(--clay);margin-top:2px}
+
+/* cosmic band */
+.cosmic{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.cosmic-bg{position:absolute;inset:0;background:url('../assets/img/hunate/hunate-band.webp') center/cover}
+.cosmic-veil{position:absolute;inset:0;background:rgba(22,21,19,.72)}
+.cosmic-q{position:relative;z-index:2;max-width:760px;padding:60px 24px}
+.cosmic-q p{font-family:'Merriweather',serif;font-style:italic;font-size:clamp(1.6rem,3.8vw,2.6rem);color:var(--sand);line-height:1.4}
+.cosmic-q .by{font-family:'Montserrat',sans-serif;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--prana);margin-top:20px}
+
+/* vision 777 */
+.vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
+.seven{text-align:center;padding:36px 20px;border:1px solid rgba(234,231,220,.12);background:rgba(234,231,220,.02)}
+.seven .n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:3.4rem;color:var(--prana);line-height:1}
+.seven .l{font-family:'Montserrat',sans-serif;font-weight:600;font-size:1rem;color:var(--sand);margin-top:8px}
+.seven .d{color:var(--clay);font-size:.88rem;margin-top:8px;line-height:1.7}
+.vision-note{text-align:center;max-width:760px;margin:40px auto 0;color:var(--clay);line-height:1.95}
+.vision-note strong{color:var(--sand)}
+
+/* books */
+.books{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.book{display:flex;gap:20px;padding:26px;border:1px solid rgba(234,231,220,.12);background:rgba(234,231,220,.02);transition:.3s}
+.book:hover{border-color:var(--akasha)}
+.book .spine{width:46px;flex:none;background:linear-gradient(var(--prana),#6e1f1d);position:relative;border-radius:2px}
+.book .spine::after{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:rgba(234,231,220,.3)}
+.book .bx h4{font-family:'Montserrat',sans-serif;font-size:1.05rem;margin-bottom:6px;line-height:1.3}
+.book .bx p{color:var(--clay);font-size:.86rem;line-height:1.65;margin-bottom:12px}
+.book .soon{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--akasha);border:1px solid var(--akasha);padding:5px 12px}
+.book .bdl{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--shunya);background:var(--akasha);padding:7px 14px;transition:.3s}
+.book .bdl:hover{background:var(--prana);color:var(--sand)}
+
+/* join */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:10px}
+.role h4{font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--prana);margin-bottom:12px;font-weight:600}
+.role ul li{color:var(--clay);font-size:.92rem;padding:3px 0;line-height:1.5}
+.joinflow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:46px 0}
+.jf{text-align:center;padding:26px}
+.jf .n{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--prana);font-size:1.6rem}
+.jf h4{margin:8px 0 6px;font-size:1.1rem}
+.jf p{color:var(--clay);font-size:.9rem;line-height:1.7}
+
+/* contact */
+.hcontact{text-align:center;padding:96px 0 60px;background:var(--shunya-2)}
+.hcontact h2{font-size:clamp(2rem,4.4vw,3rem)}
+.hcontact p{color:var(--clay);max-width:560px;margin:14px auto 32px;line-height:1.9}
+.hchannels{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+.hchannels a{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border:1px solid rgba(234,231,220,.18);color:var(--sand);font-family:'Montserrat',sans-serif;font-size:.86rem;transition:.3s}
+.hchannels a svg{width:17px;height:17px;fill:currentColor}
+.hchannels a.wa:hover{background:#25D366;border-color:#25D366;color:#fff}
+.hchannels a:hover{border-color:var(--prana)}
+.hfoot{border-top:1px solid rgba(234,231,220,.1);padding-top:26px;max-width:1180px;margin:0 auto;padding-left:40px;padding-right:40px}
+.hfoot .pillline{font-family:'Montserrat',sans-serif;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--prana)}
+.hfoot .tag{font-family:'Merriweather',serif;font-style:italic;color:var(--clay);margin-top:8px}
+.hfoot .copy{font-size:.76rem;color:var(--stone);margin-top:8px}
+
+@media(max-width:980px){
+  .pillars,.works,.vision-grid,.roles,.joinflow{grid-template-columns:1fr}
+  .story-grid{grid-template-columns:1fr;gap:26px}
+  .story-grid .rv:first-child{order:-1}
+  .books{grid-template-columns:1fr}
+  .works{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){.works{grid-template-columns:1fr}}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="icon" href="/assets/img/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://khemrajpradhan.com.np/hunate/">
+<meta property="og:url" content="https://khemrajpradhan.com.np/hunate/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Hunate Movement","url":"https://khemrajpradhan.com.np/hunate/","description":"A citizen led research and regenerative living movement in Nepal for balance among Humanity, Nature, and Technology.","founder":{"@type":"Person","name":"Khem Raj Pradhan"}}</script>
+</head>
+<body class="hunate">
+<div class="bar" id="bar"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="../index.html" class="brand">Khem Raj <em>Pradhan</em></a>
+    <nav class="menu">
+      <a href="../index.html">Home</a>
+      <a href="../khem/">Khem</a>
+      <a href="../studio/">Studio</a>
+      <a href="index.html" class="here">Hunate</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="cta">Join</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile" id="mobile">
+  <a href="../index.html">Home</a><a href="../khem/">Khem</a><a href="../studio/">Studio</a><a href="index.html">Hunate</a><a href="../gallery/">Gallery</a>
+  <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="cta">Join</a>
+</nav>
+
+<div class="subnav">
+  <div class="wrap subnav-in">
+    <span class="nav-label">On this page</span>
+    <a href="#idea">The Idea</a>
+    <a href="#story">Story</a>
+    <a href="#works">Works</a>
+    <a href="#vision">Vision</a>
+    <a href="#books">Books</a>
+    <a href="#join">Join</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hhero">
+  <div class="hhero-bg"></div>
+  <div class="hhero-veil"></div>
+  <div class="hhero-inner">
+    <div class="hmark rv in">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Hunate">
+        <circle cx="100" cy="100" r="84" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+        <circle cx="100" cy="60" r="15" fill="#A42A28"/>
+        <circle cx="66" cy="123" r="15" fill="#A42A28"/><circle cx="66" cy="123" r="6" fill="#161513"/>
+        <circle cx="134" cy="123" r="15" fill="#A42A28"/><circle cx="134" cy="123" r="6" fill="#161513"/>
+      </svg>
+    </div>
+    <div class="hword rv in d1">HUNATE</div>
+    <div class="hsplit rv in d1"><b>HU</b>manity &nbsp;·&nbsp; <b>NA</b>ture &nbsp;·&nbsp; <b>TE</b>chnology</div>
+    <h1 class="rv in d2">Ancient wisdom for a regenerative future.</h1>
+    <p class="rv in d2">A citizen led movement in Nepal, remembering how to live in balance with the Earth. We build with our hands, learn from the soil, and design a future that works for everyone.</p>
+    <div class="hhero-cta rv in d3">
+      <a href="#books" class="btn">Read the books</a>
+      <a href="#join" class="btn-akasha">Join the movement</a>
+    </div>
+  </div>
+  <div class="hscroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- THE IDEA -->
+<section class="hband" id="idea">
+  <div class="wrap">
+    <div class="hhead rv">
+      <div class="prana-rule"></div>
+      <span class="eyebrow" style="display:block;margin-top:18px">The Idea</span>
+      <h2>Humanity, Nature, Technology. In balance.</h2>
+    </div>
+    <div class="idea-lead rv">
+      <p>The world we inherited is breaking. Its education, economy, politics, and its relationship with nature are all failing, not by accident, but by design. <strong>We call it the failing social system.</strong></p>
+      <p>Hunate exists to question that design, find what went wrong, and build something better. The name itself is the whole idea, three forces that must move together.</p>
+    </div>
+    <div class="pillars rv">
+      <div class="pillar"><div class="pk"><b>HU</b>manity</div><div class="pd">The self, the family, the community. People remembering how to live, relate, and grow with meaning.</div></div>
+      <div class="pillar"><div class="pk"><b>NA</b>ture</div><div class="pd">The soil, the body, the land. Regenerative food, healing, and ways of living that give back more than they take.</div></div>
+      <div class="pillar"><div class="pk"><b>TE</b>chnology</div><div class="pd">Tools and systems used ethically, in the service of life and not of profit or control.</div></div>
+    </div>
+    <div class="notwe rv">We are not an NGO. Not a company. Not a political party. <b>We are humans, building in the open. Our work is our proof.</b></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="hband alt" id="story">
+  <div class="wrap story-grid">
+    <div class="rv"><img src="../assets/img/hunate/hunate-origin.webp" alt="The first Joon Project presentation to friends, 2016"></div>
+    <div class="rv d1">
+      <span class="eyebrow">The Story</span>
+      <h2 style="margin-top:10px">It started with a question, and a few friends.</h2>
+      <p>The seed was planted in 2013 as <strong>The Joon Project</strong>, a quiet attempt to research and redesign how we live with each other, with nature, and with technology. In time it grew a name and a shape, and in front of a small room of friends, the vision was shared aloud for the first time.</p>
+      <p>Since then it has lived as real work, not slogans. A festival and scout camp for children. A permaculture design course turned into practice. An institutional orphanage softened into a family style home. Music sessions, gatherings, and seasons of building, planting, and learning by hand.</p>
+      <p>The movement is still growing quietly. If something in you recognises what we are saying, you already belong here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="hband" id="works">
+  <div class="wrap">
+    <div class="hhead rv">
+      <div class="prana-rule"></div>
+      <span class="eyebrow" style="display:block;margin-top:18px">The Works</span>
+      <h2>Proof on the ground</h2>
+      <p>Not theory. Real days, real hands, real people, across eastern Nepal.</p>
+    </div>
+    <div class="works rv">
+      <div class="work"><img src="../assets/img/hunate/w-permaculture.webp" alt="Permaculture workshop"><div class="work-cap"><b>Permaculture</b><span>Designing food and soil systems</span></div></div>
+      <div class="work"><img src="../assets/img/hunate/w-eyecheck.webp" alt="Orphanage care"><div class="work-cap"><b>Hamro Orphanage</b><span>A home, not an institution</span></div></div>
+      <div class="work"><img src="../assets/img/hunate/w-camp.webp" alt="Children's scout camp"><div class="work-cap"><b>Joon Camp</b><span>Learning in nature with children</span></div></div>
+      <div class="work"><img src="../assets/img/hunate/w-joonhouse.webp" alt="Joon House gatherings"><div class="work-cap"><b>The Joon House</b><span>Where the community meets</span></div></div>
+      <div class="work"><img src="../assets/img/hunate/w-music.webp" alt="Music and festival nights"><div class="work-cap"><b>Joon Festival</b><span>Music, fire, and gathering</span></div></div>
+      <div class="work"><img src="../assets/img/hunate/w-field.webp" alt="Working the land together"><div class="work-cap"><b>On the Land</b><span>Building and growing by hand</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COSMIC BAND -->
+<section class="cosmic">
+  <div class="cosmic-bg"></div>
+  <div class="cosmic-veil"></div>
+  <div class="cosmic-q rv">
+    <p>The future is not built. It is grown.</p>
+    <div class="by">Humans · Nature · Technology · In balance</div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="hband alt" id="vision">
+  <div class="wrap">
+    <div class="hhead rv">
+      <div class="prana-rule"></div>
+      <span class="eyebrow" style="display:block;margin-top:18px">Vision &amp; Mission</span>
+      <h2>The 7 · 7 · 7 Initiative</h2>
+      <p>Our first mission is simple to say and hard to do. Turn living places into living proof.</p>
+    </div>
+    <div class="vision-grid rv">
+      <div class="seven"><div class="n">7</div><div class="l">Families</div><div class="d">Households who redesign their life, home, and land around balance.</div></div>
+      <div class="seven"><div class="n">7</div><div class="l">Orphanages</div><div class="d">Institutional homes softened into self sufficient, regenerative families.</div></div>
+      <div class="seven"><div class="n">7</div><div class="l">Provinces</div><div class="d">One seed in each of Nepal's seven provinces, so the work belongs to the whole country.</div></div>
+    </div>
+    <div class="vision-note rv">Each becomes a <strong>Hunateculture Hub</strong>, a place that feeds itself, heals itself, and teaches the next. Hunateculture is our life design system, blending ancient wisdom with modern, ethical innovation. The mission is to make a better way of living visible, and to share it freely.</div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="hband" id="books">
+  <div class="wrap">
+    <div class="hhead rv">
+      <div class="prana-rule"></div>
+      <span class="eyebrow" style="display:block;margin-top:18px">The Books</span>
+      <h2>Go deep. Read the work.</h2>
+      <p>The whole philosophy and plan, written down and shared openly. Read them, understand the project, then reach out.</p>
+    </div>
+    <div class="books rv">
+      <div class="book"><div class="spine"></div><div class="bx"><h4>History of The Joon Project</h4><p>Where it began, the people, the places, and the years of work that became Hunate.</p><span class="soon">Preparing</span></div></div>
+      <div class="book"><div class="spine"></div><div class="bx"><h4>The Hunate Book</h4><p>The core philosophy. The failing social system, the three pillars, and the world we are designing.</p><span class="soon">Preparing</span></div></div>
+      <div class="book"><div class="spine"></div><div class="bx"><h4>Hunate Culture Design Book</h4><p>Hunateculture as a practical system for redesigning life, home, land, and work around balance.</p><span class="soon">Preparing</span></div></div>
+      <div class="book"><div class="spine"></div><div class="bx"><h4>Becoming Hunatian</h4><p>A self help journey of self discovery, for anyone ready to question and rebuild their own life.</p><span class="soon">Preparing</span></div></div>
+      <div class="book"><div class="spine"></div><div class="bx"><h4>About Hunate Movement</h4><p>What the movement is, what it is not, how it is organised, and how it works in the open.</p><span class="soon">Preparing</span></div></div>
+      <div class="book"><div class="spine"></div><div class="bx"><h4>Joining Hunate Movement</h4><p>The criteria, roles, responsibilities, and the process of becoming part of the work.</p><span class="soon">Preparing</span></div></div>
+    </div>
+    <p style="text-align:center;color:var(--stone);margin-top:24px;font-size:.9rem" class="rv">The books are being prepared for publication and will be available to download here soon.</p>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="hband alt" id="join">
+  <div class="wrap">
+    <div class="hhead rv">
+      <div class="prana-rule"></div>
+      <span class="eyebrow" style="display:block;margin-top:18px">Join the Movement</span>
+      <h2>We are looking for humans</h2>
+      <p>Thinkers, builders, healers, farmers, and engineers, coming together without hierarchy to do what humans are supposed to do.</p>
+    </div>
+    <div class="roles rv">
+      <div class="role"><h4>Thinkers &amp; Guides</h4><ul><li>Free Thinkers</li><li>Visionaries</li><li>Lawyers</li><li>Social Engineers</li><li>Journalists</li></ul></div>
+      <div class="role"><h4>Ancient &amp; Natural Knowledge</h4><ul><li>Astrologers</li><li>Ayurveda Experts</li><li>Vastu Consultants</li><li>Yoga &amp; Meditation Guides</li></ul></div>
+      <div class="role"><h4>Land &amp; Food Systems</h4><ul><li>Permaculture Designers</li><li>Gardeners</li><li>Potters</li></ul></div>
+      <div class="role"><h4>Design &amp; Construction</h4><ul><li>Eco Architects</li><li>Civil Engineers</li><li>Carpenters &amp; Builders</li><li>Plumbers, Welders, Ironsmiths</li></ul></div>
+      <div class="role"><h4>Engineering &amp; Technology</h4><ul><li>Renewable Energy Engineers</li><li>Computer Engineers</li><li>Mechanical Engineers</li></ul></div>
+      <div class="role"><h4>Community, Media &amp; Education</h4><ul><li>Teachers</li><li>Community Organisers</li><li>Cinematographers &amp; Photographers</li><li>Writers, Artists &amp; More</li></ul></div>
+    </div>
+    <div class="joinflow rv">
+      <div class="jf"><div class="n">01</div><h4>Read</h4><p>Read the books and understand the project deeply. This is the first filter, and the first gift.</p></div>
+      <div class="jf"><div class="n">02</div><h4>Reflect</h4><p>Sit with it. If something in you recognises this work, you already belong here.</p></div>
+      <div class="jf"><div class="n">03</div><h4>Reach out</h4><p>Message us directly on WhatsApp and tell us who you are and what you bring.</p></div>
+    </div>
+    <div style="text-align:center" class="rv">
+      <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="btn">Message us to join</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="hcontact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow rv">Connect</span>
+    <h2 class="rv" style="margin-top:12px">Find the movement</h2>
+    <p class="rv">Follow the work, watch it unfold, and reach out when you are ready.</p>
+    <div class="hchannels rv">
+      <a href="https://wa.me/9779816860282" target="_blank" rel="noopener" class="wa"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.957zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg> WhatsApp</a>
+      <a href="https://www.youtube.com/@hunatemovement" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a>
+      <a href="https://www.linkedin.com/company/hunatemovement/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg> LinkedIn</a>
+      <a href="https://maps.app.goo.gl/3wJ3v92qg3Wwj6yr7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg> Google</a>
+    </div>
+    <div class="hfoot rv">
+      <div class="pillline">Humans · Nature · Technology · In Balance</div>
+      <div class="tag">The future is not built. It is grown.</div>
+      <div class="copy">© <span id="yr"></span> The Hunate Movement · Nepal &nbsp;·&nbsp; <a href="/privacy-policy/" style="color:inherit;border-bottom:1px solid currentColor;opacity:.75">Privacy</a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const hdr=document.getElementById('hdr'),bar=document.getElementById('bar');
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile');
+burger.addEventListener('click',()=>{burger.classList.toggle('x');mobile.classList.toggle('open')});
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');mobile.classList.remove('open')}));
+function onScroll(){const y=window.scrollY;hdr.classList.toggle('scrolled',y>20);const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(y/h*100):0)+'%';}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+const secs=[...document.querySelectorAll('section[id]')];const links=[...document.querySelectorAll('.subnav a')];
+function spy(){let cur=secs[0]?.id;const mid=window.scrollY+document.querySelector('.subnav').offsetHeight+120;for(const s of secs){if(s.offsetTop<=mid)cur=s.id;}links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));}
+window.addEventListener('scroll',spy,{passive:true});spy();
+</script>
+</body>
+</html>
+                                                                                                                                  
