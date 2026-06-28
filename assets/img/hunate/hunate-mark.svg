@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hunate">
+  <circle cx="100" cy="100" r="84" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+  <!-- Present: solid (top) -->
+  <circle cx="100" cy="60" r="15" fill="#A42A28"/>
+  <!-- Past / Nature: seeded (bottom-left) -->
+  <circle cx="66" cy="123" r="15" fill="#A42A28"/>
+  <circle cx="66" cy="123" r="6" fill="#1E1E1E"/>
+  <!-- Future / Technology: seeded (bottom-right) -->
+  <circle cx="134" cy="123" r="15" fill="#A42A28"/>
+  <circle cx="134" cy="123" r="6" fill="#1E1E1E"/>
+</svg>
