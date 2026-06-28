@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khem Raj Pradhan | Life Companion, Systems Researcher, Damak Nepal</title>
+<meta name="description" content="Khem Raj Pradhan is an independent life companion, systems researcher, and regenerative living guide in Damak, Nepal. Founder of the Hunate Movement and co founder of Mery and Khem studio.">
+<meta name="theme-color" content="#F5F0E8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Khem Raj Pradhan | Life Companion and Systems Researcher">
+<meta property="og:description" content="An independent life companion working alongside people, families, businesses, and movements in Damak, Nepal.">
+<meta property="og:image" content="https://khemrajpradhan.com.np/assets/img/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F5F0E8; --cream-2:#EDE6D6; --cream-3:#FAF7EE;
+  --obsidian:#0D0D0B; --obsidian-2:#1C1C1A;
+  --gold:#C9A84C; --gold-light:#E8C97A; --gold-dim:rgba(201,168,76,.18);
+  --terracotta:#A42A28; --ash:#6B6B60; --ink:#4A4A44;
+  /* world accents */
+  --studio:#B82820; --studio-2:#2D4A8E; --studio-3:#E8A33D;
+  --hunate:#6B4F38; --hunate-2:#3B3C88; --hunate-3:#C9A84C;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --hdr:72px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--obsidian);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12;color:var(--obsidian)}
+em.gold{color:var(--gold);font-style:italic}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.lead{font-size:1.12rem;line-height:1.9;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* progress */
+.bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--gold);z-index:9999;transition:width .1s linear}
+
+/* header */
+header{position:fixed;top:0;width:100%;height:var(--hdr);z-index:1000;display:flex;align-items:center;background:rgba(245,240,232,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s}
+header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;letter-spacing:.01em}
+.brand em{color:var(--gold);font-style:italic}
+.menu{display:flex;align-items:center;gap:34px}
+.menu a{font-size:.92rem;color:var(--ink);position:relative;transition:color .3s}
+.menu a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+.menu a:hover{color:var(--obsidian)}.menu a:hover::after{width:100%}
+.menu a.cta{background:var(--obsidian);color:var(--cream);padding:10px 20px;font-size:.85rem;transition:background .3s,transform .2s}
+.menu a.cta:hover{background:var(--terracotta);transform:translateY(-1px)}
+.menu a.cta::after{display:none}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--obsidian);transition:.3s}
+.burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile{position:fixed;inset:var(--hdr) 0 0 0;background:rgba(245,240,232,.99);backdrop-filter:blur(20px);z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.mobile.open{display:flex}
+.mobile a{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600}
+.mobile a.cta{font-family:'Outfit';font-size:1rem;background:var(--obsidian);color:var(--cream);padding:12px 26px}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.hero-veil{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(to top,var(--cream) 2%,rgba(245,240,232,.65) 26%,rgba(245,240,232,.05) 55%),
+  linear-gradient(to right,rgba(245,240,232,.78),rgba(245,240,232,0) 60%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:7vh;padding-top:var(--hdr)}
+.hero .eyebrow{margin-bottom:20px;display:inline-flex;align-items:center;gap:14px}
+.hero .eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(3.4rem,9vw,6.6rem);line-height:.98;letter-spacing:-.02em;margin-bottom:26px}
+.hero p{max-width:560px;font-size:1.12rem;color:var(--ink);margin-bottom:34px}
+.hero-actions{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;font-size:.92rem;font-weight:500;background:var(--obsidian);color:var(--cream);padding:15px 30px;transition:background .3s,transform .3s,box-shadow .3s}
+.btn:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 14px 38px rgba(0,0,0,.14)}
+.btn-line{font-size:.92rem;font-weight:500;border-bottom:1px solid var(--gold);padding-bottom:3px;transition:color .3s,border-color .3s}
+.btn-line:hover{color:var(--gold);border-color:var(--terracotta)}
+.scroll-cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.6}
+.scroll-cue span{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.scroll-cue i{width:1px;height:40px;background:linear-gradient(var(--gold),transparent)}
+
+/* intro */
+.intro{padding:120px 0 30px}
+.intro-grid{display:grid;grid-template-columns:.7fr 1fr;gap:70px;align-items:start}
+.hintro img{width:100%;aspect-ratio:21/9;object-fit:cover;display:block;filter:grayscale(.05) contrast(1.03)}
+.intro h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:600}
+.intro .lead p{margin-bottom:22px}
+.intro .sign{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.15rem;margin-top:6px}
+.rule{width:42px;height:2px;background:var(--gold);margin-bottom:26px}
+
+/* philosophy */
+.philos{padding:40px 0 50px}
+.philos-inner{max-width:880px;margin:0 auto;text-align:center}
+.philos .eyebrow{display:inline-flex;align-items:center;gap:12px}
+.philos .eyebrow::before,.philos .eyebrow::after{content:'';width:26px;height:1px;background:var(--gold)}
+.philos h2{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:500;line-height:1.28;margin:20px 0 22px}
+.philos h2 em{color:var(--gold);font-style:italic}
+.philos p{color:var(--ink);font-size:1.06rem;max-width:680px;margin:0 auto}
+.pillars{display:flex;justify-content:center;gap:0;margin-top:36px;flex-wrap:wrap}
+.pillar{padding:6px 30px;position:relative}
+.pillar+.pillar::before{content:'';position:absolute;left:0;top:16%;height:68%;width:1px;background:var(--gold-dim)}
+.pillar .pk{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600}
+.pillar .ps{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash);margin-top:5px}
+
+/* doorways */
+.doors{padding:96px 0 110px}
+.doors-head{text-align:center;max-width:620px;margin:0 auto 54px}
+.doors-head h2{font-size:clamp(2rem,4.4vw,3rem)}
+.doors-head p{color:var(--ink);margin-top:14px}
+.door-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.door{position:relative;display:block;overflow:hidden;background:var(--obsidian);min-height:440px;border:1px solid rgba(0,0,0,.06)}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .6s;filter:saturate(.92)}
+.door:hover img{transform:scale(1.06)}
+.door-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,11,.9) 6%,rgba(13,13,11,.35) 46%,rgba(13,13,11,.08))}
+.door-body{position:absolute;left:0;right:0;bottom:0;padding:30px 28px;color:var(--cream)}
+.door .tag{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;display:block}
+.door h3{color:var(--cream);font-size:1.9rem;margin-bottom:8px}
+.door p{font-size:.92rem;color:rgba(245,240,232,.82);line-height:1.65;margin-bottom:16px}
+.door .enter{font-size:.82rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+.door:hover .enter{gap:14px}
+.door .stripe{position:absolute;top:0;left:0;right:0;height:4px;z-index:2}
+.door.hire .stripe{background:var(--gold)} .door.hire .tag,.door.hire .enter{color:var(--gold-light)}
+.door.studio .stripe{background:var(--studio-3)} .door.studio .tag,.door.studio .enter{color:var(--studio-3)}
+.door.hunate .stripe{background:var(--hunate-3)} .door.hunate .tag,.door.hunate .enter{color:var(--hunate-3)}
+
+/* journey */
+.journey{background:var(--cream-3);padding:104px 0;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.journey-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.journey-head h2{font-size:clamp(2rem,4.4vw,3rem)}
+.journey-head p{color:var(--ink);max-width:440px;margin-top:12px}
+.j-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.j-cell{position:relative;aspect-ratio:1;overflow:hidden}
+.j-cell img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.j-cell:hover img{transform:scale(1.07)}
+.j-cell span{position:absolute;left:12px;bottom:10px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+
+/* contact */
+.contact{padding:110px 0 60px;text-align:center}
+.contact h2{font-size:clamp(2rem,4.4vw,3rem)}
+.contact p{color:var(--ink);max-width:520px;margin:14px auto 34px}
+.channels{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:46px}
+.channels a{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border:1px solid;font-size:.9rem;font-weight:500;transition:transform .3s,background .3s,color .3s,border-color .3s,box-shadow .3s}
+.channels a svg{width:17px;height:17px;fill:currentColor}
+.ch-wa{background:#25D366;color:#fff;border-color:#25D366}
+.ch-wa:hover{background:#1da851;border-color:#1da851;transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,211,102,.28)}
+.ch-mail{background:var(--obsidian);color:var(--cream);border-color:var(--obsidian)}
+.ch-mail:hover{background:var(--terracotta);border-color:var(--terracotta);transform:translateY(-2px)}
+.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.socials a{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold-dim);color:var(--ink);transition:.3s}
+.socials a svg{width:17px;height:17px;fill:currentColor}
+.socials a:hover{transform:translateY(-2px);background:var(--obsidian);color:var(--cream);border-color:var(--obsidian)}
+.foot{border-top:1px solid var(--gold-dim);padding-top:26px}
+.foot .coords{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--ash);text-transform:uppercase}
+.foot .tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.05rem;margin-top:8px}
+.foot .copy{font-size:.76rem;color:var(--ash);margin-top:6px}
+
+@media(max-width:980px){
+  .intro-grid{grid-template-columns:1fr;gap:28px}
+  .door-grid{grid-template-columns:1fr;gap:18px}
+  .door{min-height:380px}
+  .j-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .wrap{padding:0 24px}
+  .menu{display:none}.burger{display:flex}
+  .intro{padding:84px 0 10px}.doors{padding:70px 0 80px}.journey{padding:74px 0}.contact{padding:80px 0 50px}
+  .hero p{font-size:1.04rem}
+}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="icon" href="/assets/img/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://khemrajpradhan.com.np/">
+<meta property="og:url" content="https://khemrajpradhan.com.np/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Khem Raj Pradhan","url":"https://khemrajpradhan.com.np/","image":"https://khemrajpradhan.com.np/assets/img/og-image.jpg","jobTitle":"Life Companion & Systems Researcher","description":"Independent life companion, systems researcher, and regenerative living guide in Damak, Nepal.","address":{"@type":"PostalAddress","addressLocality":"Damak","addressRegion":"Province No. 1","addressCountry":"NP"},"email":"email@khemrajpradhan.com.np","telephone":"+977-9840852582","sameAs":["https://www.youtube.com/@khemrajpradhan-com-np","https://www.facebook.com/khemrajpradhan.com.np","https://www.instagram.com/khemrajpradhan.com.np/","https://www.linkedin.com/in/khemrajpradhan-com-np/","https://x.com/khemrajpradhan_","https://www.tiktok.com/@khemrajpradhan.com.np"],"worksFor":{"@type":"Organization","name":"Mery & Khem","url":"https://khemrajpradhan.com.np/studio/"}}</script>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Khem Raj <em>Pradhan</em></a>
+    <nav class="menu">
+  <a href="index.html" class="here">Home</a>
+  <a href="khem/">Khem</a>
+  <a href="gallery/">Gallery</a>
+  <span class="nav-sep"></span>
+  <a href="hunate/">Hunate</a>
+  <span class="nav-sep"></span>
+  <a href="studio/">M&amp;K Studio</a>
+  <a href="https://forms.gle/u3yh87xCyJ19eB5M9" target="_blank" rel="noopener" class="cta">Book a Call</a>
+</nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile" id="mobile">
+  <a href="index.html" class="here">Home</a>
+  <a href="khem/">Khem</a>
+  <a href="gallery/">Gallery</a>
+  <a href="hunate/">Hunate</a>
+  <a href="studio/">M&amp;K Studio</a>
+  <a href="https://forms.gle/u3yh87xCyJ19eB5M9" target="_blank" rel="noopener" class="cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <picture>
+      <source media="(max-width:760px)" srcset="assets/img/hero-home-sm.webp">
+      <img src="assets/img/hero-home.webp" alt="Khem Raj Pradhan reading on a mountain ridge below Machapuchare in the Nepal Himalaya">
+    </picture>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow rv in">Damak, Nepal · Est. 2025</span>
+    <h1 class="rv in d1">Restructuring<br><em class="gold">Life</em> &amp; Purpose</h1>
+    <p class="rv in d2">Welcome. I believe everything in life is connected, and I have spent my years searching for the quiet connections this mainstream system keeps hidden. I am an independent researcher and a life companion from Damak, Nepal.</p>
+    <div class="hero-actions rv in d3">
+      <a href="khem/" class="btn">Work with me</a>
+      <a href="gallery/" class="btn-line">See my journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philos">
+  <div class="wrap">
+    <div class="philos-inner rv">
+      <span class="eyebrow">Everything is Connected</span>
+      <h2>Space and earth. Past, present, and future.<br><em>Humans, nature, and technology.</em> None of it stands apart.</h2>
+      <p>I work where these threads meet. When one falls out of balance, the others feel it. So I do not try to fix a life, a body, a home, or a business in pieces. We read the whole, and bring it back into harmony.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="pk">Humans</div><div class="ps">Self · Family</div></div>
+        <div class="pillar"><div class="pk">Nature</div><div class="ps">Land · Body</div></div>
+        <div class="pillar"><div class="pk">Technology</div><div class="ps">Tools · Systems</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div class="rv">
+      <div class="rule"></div>
+      <h2>I have lived these things,<br>not only read them.</h2>
+    </div>
+    <div class="lead rv d1">
+      <p>The world we live in is loud and built for profit, not for the growth of people. I call it the failing social system, and most of us are too busy surviving it to notice where it is breaking us.</p>
+      <p>My life has been one long research project into what it means to be human. I left the path I was handed, found my own books and teachers, travelled, lived among many communities, and worked across yoga, Ayurveda, permaculture, Vastu, astrology, business, and building with my hands. I returned with what actually works.</p>
+      <p>My goal is simple. To bring everything I have lived and found into one work, helping humans, nature, and technology grow together in peace and balance. Whatever problem you carry, we find the root, design the change, and stay with it until it is fixed in your life.</p>
+      <div class="sign">Khem Raj Pradhan, Damak</div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:50px"><div class="hintro rv"><img src="assets/img/home-intro.webp" alt="Under the night sky in the hills of Nepal"></div></div>
+</section>
+
+<!-- DOORWAYS -->
+<section class="doors">
+  <div class="wrap">
+    <div class="doors-head rv">
+      <span class="eyebrow">Three Connected Worlds</span>
+      <h2 style="margin-top:12px">Where would you like to begin?</h2>
+      <p>One person at the centre, three ways to work together. Step into the one that fits you.</p>
+    </div>
+    <div class="door-grid">
+      <a href="khem/" class="door hire rv">
+        <div class="stripe"></div>
+        <img src="assets/img/door-hire.webp" alt="Khem Raj Pradhan in the Nepal hills">
+        <div class="door-veil"></div>
+        <div class="door-body">
+          <span class="tag">01 · Personal</span>
+          <h3>Hire Khem</h3>
+          <p>A companion for your life, body, home, family, and work. In person, slow, and honest.</p>
+          <span class="enter">Enter &rarr;</span>
+        </div>
+      </a>
+      <a href="studio/" class="door studio rv d1">
+        <div class="stripe"></div>
+        <img src="assets/img/door-studio.webp" alt="Mery and Khem studio work">
+        <div class="door-veil"></div>
+        <div class="door-body">
+          <span class="tag">02 · Studio</span>
+          <h3>Mery &amp; Khem</h3>
+          <p>Brand, digital, and life, designed as one connected whole. Built with Merina, from Damak.</p>
+          <span class="enter">Enter &rarr;</span>
+        </div>
+      </a>
+      <a href="hunate/" class="door hunate rv d2">
+        <div class="stripe"></div>
+        <img src="assets/img/door-hunate.webp" alt="The Hunate Movement and permaculture work">
+        <div class="door-veil"></div>
+        <div class="door-body">
+          <span class="tag">03 · Movement</span>
+          <h3>Hunate</h3>
+          <p>A nonprofit research and regenerative living movement. Humans, Nature, Technology, in balance.</p>
+          <span class="enter">Enter &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey">
+  <div class="wrap">
+    <div class="journey-head rv">
+      <div>
+        <span class="eyebrow">The Long Way · Gallery</span>
+        <h2 style="margin-top:12px">A life, in the order it happened</h2>
+      </div>
+      <p>From a village in the hills of Bhojpur to the work of today. Step into the gallery to walk it all, photos and stories the way they came.</p>
+    </div>
+    <div class="j-strip">
+      <a href="gallery/" class="j-cell rv"><img src="assets/img/j-birth.webp" alt="Beginnings in Bhojpur"><span>Bhojpur · Beginnings</span></a>
+      <a href="gallery/" class="j-cell rv d1"><img src="assets/img/j-road.webp" alt="On the road"><span>The Road</span></a>
+      <a href="gallery/" class="j-cell rv d2"><img src="assets/img/j-learning.webp" alt="The learning years, Cambodia"><span>The Learning</span></a>
+      <a href="gallery/" class="j-cell rv d3"><img src="assets/img/j-movement.webp" alt="A music session with the circle"><span>The Movement</span></a>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="rv">
+      <a href="gallery/" class="btn">Open the gallery &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow rv">Connect</span>
+    <h2 class="rv" style="margin-top:12px">If you feel the friction, reach out</h2>
+    <p class="rv">I listen first. Then we begin. The first conversation is the start of everything.</p>
+    <div class="channels rv">
+      <a href="https://wa.me/9779840852582" target="_blank" rel="noopener" class="ch-wa"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.957zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg> WhatsApp</a>
+      <a href="mailto:email@khemrajpradhan.com.np" class="ch-mail"><svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg> Email</a>
+    </div>
+    <div class="socials rv">
+      <a href="https://www.youtube.com/@khemrajpradhan-com-np" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.facebook.com/khemrajpradhan.com.np" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.instagram.com/khemrajpradhan.com.np/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.linkedin.com/in/khemrajpradhan-com-np/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+      <a href="https://x.com/khemrajpradhan_" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.tiktok.com/@khemrajpradhan.com.np" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    </div>
+    <div class="foot rv">
+      <div class="coords">Damak, Province No. 1, Nepal</div>
+      <div class="tag">Evolution over Degradation</div>
+      <div class="copy">© <span id="yr"></span> Khem Raj Pradhan · All rights reserved &nbsp;·&nbsp; <a href="/privacy-policy/" style="color:inherit;border-bottom:1px solid currentColor;opacity:.75">Privacy</a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const hdr=document.getElementById('hdr'),bar=document.getElementById('bar');
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile');
+burger.addEventListener('click',()=>{burger.classList.toggle('x');mobile.classList.toggle('open')});
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');mobile.classList.remove('open')}));
+function onScroll(){
+  const y=window.scrollY;
+  hdr.classList.toggle('scrolled',y>20);
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.width=(h>0?(y/h*100):0)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
