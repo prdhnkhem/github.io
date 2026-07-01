@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://khemrajpradhan.com.np/sitemap.xml
