@@ -19,11 +19,11 @@
 :root{
   --cream:#F5F0E8; --cream-2:#EDE6D6; --cream-3:#FAF7EE;
   --obsidian:#0D0D0B; --obsidian-2:#1C1C1A;
-  --gold:#C9A84C; --gold-light:#E8C97A; --gold-dim:rgba(201,168,76,.18);
+  --gold:#801919; --gold-light:#C56A62; --gold-dim:rgba(128,25,25,.16);
   --terracotta:#A42A28; --ash:#6B6B60; --ink:#4A4A44;
   /* world accents */
   --studio:#B82820; --studio-2:#2D4A8E; --studio-3:#E8A33D;
-  --hunate:#6B4F38; --hunate-2:#3B3C88; --hunate-3:#C9A84C;
+  --hunate:#6B4F38; --hunate-2:#3B3C88; --hunate-3:#A42A28;
   --ease:cubic-bezier(.25,.46,.45,.94);
   --hdr:72px;
 }
@@ -119,7 +119,7 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
 .doors-head{text-align:center;max-width:620px;margin:0 auto 54px}
 .doors-head h2{font-size:clamp(2rem,4.4vw,3rem)}
 .doors-head p{color:var(--ink);margin-top:14px}
-.door-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.door-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .door{position:relative;display:block;overflow:hidden;background:var(--obsidian);min-height:440px;border:1px solid rgba(0,0,0,.06)}
 .door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .6s;filter:saturate(.92)}
 .door:hover img{transform:scale(1.06)}
@@ -208,7 +208,7 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
 .gnode{position:absolute;left:-42px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--cream);border:2px solid var(--gold);z-index:2}
 .gentry .era{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .gtag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;margin-bottom:10px;color:#fff}
-.gtag.personal{background:var(--gold);color:var(--obsidian)}
+.gtag.personal{background:var(--gold);color:var(--cream)}
 .gtag.travel{background:#4A6D7C}
 .gtag.joon{background:var(--terracotta)}
 .gtag.hunate{background:#A42A28}
@@ -267,7 +267,7 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="https://khemrajpradhan.com.np/">
 <meta property="og:url" content="https://khemrajpradhan.com.np/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Khem Raj Pradhan","url":"https://khemrajpradhan.com.np/","image":"https://khemrajpradhan.com.np/assets/img/og-image.jpg","jobTitle":"Life Companion & Systems Researcher","description":"Independent life companion, systems researcher, and regenerative living guide in Damak, Nepal.","address":{"@type":"PostalAddress","addressLocality":"Damak","addressRegion":"Province No. 1","addressCountry":"NP"},"email":"email@khemrajpradhan.com.np","telephone":"+977-9840852582","sameAs":["https://www.youtube.com/@khemrajpradhan-com-np","https://www.facebook.com/khemrajpradhan.com.np","https://www.instagram.com/khemrajpradhan.com.np/","https://www.linkedin.com/in/khemrajpradhan-com-np/","https://x.com/khemrajpradhan_","https://www.tiktok.com/@khemrajpradhan.com.np"],"worksFor":{"@type":"Organization","name":"Mery & Khem","url":"https://khemrajpradhan.com.np/studio/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Khem Raj Pradhan","url":"https://khemrajpradhan.com.np/","image":"https://khemrajpradhan.com.np/assets/img/og-image.jpg","jobTitle":"Life Companion & Systems Researcher","description":"Independent life companion, systems researcher, and regenerative living guide in Damak, Nepal.","address":{"@type":"PostalAddress","addressLocality":"Damak","addressRegion":"Province No. 1","addressCountry":"NP"},"email":"email@khemrajpradhan.com.np","telephone":"+977-9840852582","sameAs":["https://www.youtube.com/@khemrajpradhan-com-np","https://www.facebook.com/khemrajpradhan.com.np","https://www.instagram.com/khemrajpradhan.com.np/","https://www.linkedin.com/in/khemrajpradhan-com-np/","https://x.com/khemrajpradhan_","https://www.tiktok.com/@khemrajpradhan.com.np"],"worksFor":{"@type":"Organization","name":"Mery & Khem"}}</script>
 </head>
 <body>
 <div class="bar" id="bar"></div>
@@ -280,8 +280,6 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
   <a href="hire/">Hire Khem</a>
   <span class="nav-sep"></span>
   <a href="hunate/">Hunate</a>
-  <span class="nav-sep"></span>
-  <a href="studio/">M&amp;K Studio</a>
   <a href="https://forms.gle/u3yh87xCyJ19eB5M9" target="_blank" rel="noopener" class="cta">Book a Call</a>
 </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -291,7 +289,6 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
   <a href="index.html" class="here">Home</a>
   <a href="hire/">Hire Khem</a>
   <a href="hunate/">Hunate</a>
-  <a href="studio/">M&amp;K Studio</a>
   <a href="https://forms.gle/u3yh87xCyJ19eB5M9" target="_blank" rel="noopener" class="cta">Book a Call</a>
 </nav>
 
@@ -361,9 +358,9 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
 <section class="doors" id="worlds">
   <div class="wrap">
     <div class="doors-head rv">
-      <span class="eyebrow">Three Connected Worlds</span>
+      <span class="eyebrow">Two Connected Worlds</span>
       <h2 style="margin-top:12px">Where would you like to begin?</h2>
-      <p>One person at the centre, three ways to work together. Step into the one that fits you.</p>
+      <p>One person at the centre, two ways to work together. Step into the one that fits you.</p>
     </div>
     <div class="door-grid">
       <a href="hire/" class="door hire rv">
@@ -377,23 +374,12 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
           <span class="enter">Enter &rarr;</span>
         </div>
       </a>
-      <a href="studio/" class="door studio rv d1">
-        <div class="stripe"></div>
-        <img src="assets/img/door-studio.webp" alt="Mery and Khem studio work">
-        <div class="door-veil"></div>
-        <div class="door-body">
-          <span class="tag">02 · Studio</span>
-          <h3>Mery &amp; Khem</h3>
-          <p>Brand, digital, and life, designed as one connected whole. Built with Merina, from Damak.</p>
-          <span class="enter">Enter &rarr;</span>
-        </div>
-      </a>
-      <a href="hunate/" class="door hunate rv d2">
+      <a href="hunate/" class="door hunate rv d1">
         <div class="stripe"></div>
         <img src="assets/img/door-hunate.webp" alt="The Hunate Movement and permaculture work">
         <div class="door-veil"></div>
         <div class="door-body">
-          <span class="tag">03 · Movement</span>
+          <span class="tag">02 · Movement</span>
           <h3>Hunate</h3>
           <p>A nonprofit research and regenerative living movement. Humans, Nature, Technology, in balance.</p>
           <span class="enter">Enter &rarr;</span>
@@ -854,7 +840,7 @@ header.scrolled{background:rgba(245,240,232,.97);border-color:rgba(0,0,0,.05);bo
         <span class="gtag studio">Mery & Khem</span>
         <h3>Mery &amp; Khem Life Studio</h3>
         <p>And now, our newest venture and the profit branch of the vision, Mery &amp; Khem Life Studio, where the whole idea earns its keep.</p>
-        <div class="gthumbs"><img class="gthumb" loading="lazy" src="assets/img/gallery/c49_0.webp" data-full="assets/img/gallery/c49_0.webp" alt="Mery &amp; Khem Life Studio"></div><a class="glink" href="studio/">Enter the studio &rarr;</a>
+        <div class="gthumbs"><img class="gthumb" loading="lazy" src="assets/img/gallery/c49_0.webp" data-full="assets/img/gallery/c49_0.webp" alt="Mery &amp; Khem Life Studio"></div>
       </div>
     </div>
     <div class="gend rv"><p>The journey continues.</p></div>

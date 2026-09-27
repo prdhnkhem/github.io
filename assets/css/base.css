@@ -6,13 +6,13 @@
 :root{
   --cream:#F5F0E8; --cream-2:#EDE6D6; --cream-3:#FAF7EE;
   --obsidian:#0D0D0B; --obsidian-2:#1C1C1A;
-  --gold:#C9A84C; --gold-light:#E8C97A; --gold-dim:rgba(201,168,76,.18);
+  --gold:#801919; --gold-light:#C56A62; --gold-dim:rgba(128,25,25,.16);
   --terracotta:#A42A28; --ash:#6B6B60; --ink:#4A4A44;
   /* world accents */
   --studio:#B82820; --studio-2:#2D4A8E; --studio-3:#E8A33D;
-  --hunate:#6B4F38; --hunate-2:#3B3C88; --hunate-3:#C9A84C;
+  --hunate:#6B4F38; --hunate-2:#3B3C88; --hunate-3:#A42A28;
   /* per page accent (overridden per page) */
-  --accent:#C9A84C; --accent-soft:rgba(201,168,76,.18);
+  --accent:#801919; --accent-soft:rgba(128,25,25,.14);
   --ease:cubic-bezier(.25,.46,.45,.94);
   --hdr:72px;
 }
